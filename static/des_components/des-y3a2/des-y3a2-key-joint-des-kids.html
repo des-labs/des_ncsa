@@ -1,33 +1,32 @@
 <dom-module id="des-y3a2-key-joint-des-kids">
 
+
 <template>
 
-      <style include="shared-styles">
+      <style include="shared-styles"></style>
 
+<div class="fixup" id="kp_joint_des_kids_top"></div>
+<div class="fixdown"></div>
 
-</style>
-
-<div class="fixup" id="kp_joint-des-kids_top"></div>
-
-<des-card heading="DES Y3 + KiDS-1000">
+<des-card heading='DES Y3 + KiDS-1000'>
 	<ul>
-        <li><a href="javascript:void(0)" on-tap="_joint-des-kidskpoverview">Overview</a></li>
+        <li><a href="javascript:void(0)" on-tap="_joint_des_kidskpoverview">Overview</a></li>
         </ul>
 
 	<ul>
-      <li><a href="javascript:void(0)" on-tap="_joint-des-kidscosmochains">Cosmology Chains</a></li>
+      <li><a href="javascript:void(0)" on-tap="_joint_des_kidscosmochains">Cosmology Chains</a></li>
       </ul>
 
 	<ul>
-      <li><a href="javascript:void(0)" on-tap="_joint-des-kidslikelihood">Likelihood</a></li>
+      <li><a href="javascript:void(0)" on-tap="_joint_des_kidslikelihood">Likelihood</a></li>
       </ul>
 	
         <ul>
-      <li><a href="javascript:void(0)" on-tap="_joint-des-kidsdatavectors">Associated Data</a></li>
+      <li><a href="javascript:void(0)" on-tap="_joint_des_kidsdatavectors">Associated Data</a></li>
       </ul>
 
 
-<div id="keyjoint-des-kids_overview"></div>
+<div id="keyjoint_des_kids_overview"></div>
 <div class="card-content">
 
     <h2>
@@ -44,7 +43,7 @@
     </h2>
 
 
-    <div id="joint-des-kids_cosmochains"></div>
+    <div id="joint_des_kids_cosmochains"></div>
     <h3>Cosmology Chains <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
     <p>Download the cosmological chains presented in the DES Y3 + KiDS-1000 joint analysis. 
       Information about the adopted model and settings are documented in the file headers and 
@@ -111,7 +110,7 @@
       </tbody>
     </table>
 
-    <div id="joint-des-kids_likelihood"></div>
+    <div id="joint_des_kids_likelihood"></div>
       <h3>Likelihood <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
       <p>We analyze the two-point functions using a pipeline developed in <a href="https://cosmosis.readthedocs.io/en/latest/">CosmoSIS</a>.  
         The likelihood calculation for the combination of DES and KiDS can be accomplished using <a href = "https://github.com/joezuntz/cosmosis-standard-library/blob/main/examples/des-y3_and_kids-1000.ini">this file</a>.  
@@ -123,7 +122,7 @@
       see <a href="https://github.com/joezuntz/cosmosis-standard-library/tree/main/likelihood/des-y3_and_kids-1000/nofz_covariance">this 
         CosmoSIS directory</a> </p>
 
-	<div id="joint-des-kids_datavectors"></div>
+	<div id="joint_des_kids_datavectors"></div>
 
       <h3>Associated Data <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h3>
 
@@ -457,16 +456,16 @@
 </template>
 
 <script>
-    class DesY3A2Keyjoint-des-kids extends Polymer.Element {
+    class DesY3A2Keyjoint_des_kids extends Polymer.Element {
       static get is() { return 'des-y3a2-key-joint-des-kids'; }
-        _top() {this.$.kp_joint-des-kids_top.scrollIntoView();}
-        _joint-des-kidskpoverview() {this.$.keyjoint-des-kids_overview.scrollIntoView();}
-        _joint-des-kidscosmochains() {this.$.joint-des-kids_cosmochains.scrollIntoView();}
-        _joint-des-kidsdatavectors() {this.$.joint-des-kids_datavectors.scrollIntoView();}
-        _joint-des-kidslikelihood() {this.$.joint-des-kids_likelihood.scrollIntoView();}
+        _top() {this.$.kp_joint_des_kids_top.scrollIntoView();}
+        _joint_des_kidskpoverview() {this.$.keyjoint_des_kids_overview.scrollIntoView();}
+        _joint_des_kidscosmochains() {this.$.joint_des_kids_cosmochains.scrollIntoView();}
+        _joint_des_kidsdatavectors() {this.$.joint_des_kids_datavectors.scrollIntoView();}
+        _joint_des_kidslikelihood() {this.$.joint_des_kids_likelihood.scrollIntoView();}
 
     }
-    window.customElements.define(DesY3A2Keyjoint-des-kids.is, DesY3A2Keyjoint-des-kids);
+    window.customElements.define(DesY3A2Keyjoint_des_kids.is, DesY3A2Keyjoint_des_kids);
   </script>
 
 </dom-module>
