@@ -4,44 +4,38 @@
 <template>
 
 <style include="shared-styles">
-:host {
-       padding: 10px;
-       }
-
 </style>
 
 
 
 <div class="fixup" id="y6_gold_top"></div>
 <div class="fixdown"></div>
-<des-card heading ='Y6 Gold Products'>
-    <div class=card-content>
+<des-card heading ="Y6 Gold Products">
+    <div class="card-content">
+    <span>
     <h2>
     <strong>Overview</strong>
     </h2>
+    </span>
 
-    The Dark Energy Survey is releasing the final catalog of precise measurements of galaxies and stars within the DES 5000-square-degree footprint in the South Galactic Cap. The Y6 Gold catalog is derived from Data Release 2 and includes all six years of g,r,i,z,Y imaging measurements. Y6 Gold was formulated for the DES final cosmological analyses, but it has very general applicability. Compared to the previous Y3 Gold catalog, the depth, star/galaxy classification, photometric precision, and photometric uniformity are all substantially improved. Y6 Gold contains 669 million objects to i ~ 23.4 (S/N = 10 for extended objects). 
+    The Dark Energy Survey is releasing the final catalog of precise measurements of galaxies and stars within the DES 5000-square-degree footprint in the South Galactic Cap. The Y6 Gold catalog is derived from Data Release 2 and includes all six years of g,r,i,z,Y imaging measurements. Y6 Gold was formulated for the DES final cosmological analyses, but it has very general applicability. Compared to the previous Y3 Gold catalog, the depth, star/galaxy classification, photometric precision, and photometric uniformity are all substantially improved. Y6 Gold contains 669 million objects to i-band of 23.4 (S/N = 10 for extended objects). 
 
     The Y6 Gold data products and data quality checks are described in <a href="https://doi.org/10.3847/1538-4365/abeb66"> (ref) </a>. Updated information will be published here, when applicable. In addition, we present a list of sample queries and known issues for this catalog.
 
 
     <h2> Content.... table schema, systematics... </h2>
-
+    </div>
 
 </des-card>
+
 </template>
+
 <script>
-    class Des63A2Gold extends Polymer.Element {
+    class DesY6A2Gold extends Polymer.Element {
       static get is() { return 'des-y6a2-Y6gold'; }
-      _top() {this.$.gold_top.scrollIntoView();}
-      _schematop() {this.$.schema_top.scrollIntoView();}
-      _main() {this.$.schema_main.scrollIntoView();}
-      _survey() {this.$.schema_survey.scrollIntoView();}
-      _footprint() {this.$.schema_footprint.scrollIntoView();}
-      _issues() {this.$.gold_issues.scrollIntoView();}
-      _queries() {this.$.gold_queries.scrollIntoView();}
+      _top() {this.$.y6_gold_top.scrollIntoView();}
     }
     window.customElements.define(DesY6A2Gold.is, DesY6A2Gold);
-  </script>
+ </script>
 
 </dom-module>
