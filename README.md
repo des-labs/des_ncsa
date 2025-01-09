@@ -22,12 +22,12 @@ Workflow for contributing content updates
     ```
 4. Configure the webserver to run in "development mode".
     ```shell
-    docker run --rm -d --name desdm-public --platform linux/x86_64 \
+    docker run --rm -it --name desdm-public --platform linux/x86_64 \
         -p 8888:8080 \
         -v $(pwd):/home/des \
         -u $(id -u) \
         -e DEBUG_ENABLED="true" \
-         desdm-public
+        desdm-public
     ```
 5. Open your browser to http://127.0.0.1:8888 to view the website.
 6. Edit and save the relevant HTML files. Reload the page and see the results. Repeat this step until satisfied.
