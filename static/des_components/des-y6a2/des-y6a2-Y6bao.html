@@ -1,6 +1,37 @@
 <dom-module id="des-y6a2-bao">
 
-Blank inside
+<template>
+
+<style include="shared-styles">
+</style>
+
+
+<div class="fixup" id="y6_bao_top"></div>
+<div class="fixdown"></div>
+<des-card heading ="Y6 BAO Products">
+    <div class="card-content">
+    <span>
+    <h2>
+    <strong>Overview</strong>
+    </h2>
+    </span>
+   
+    Some content for the discontent.
+
+    </div>
+
+</des-card>
+
+</template>
+
+
+<script>
+    class DesY6A2Bao extends Polymer.Element {
+      static get is() { return 'des-y6a2-bao'; }
+      _top() {this.$.y6_bao_top.scrollIntoView();}
+    }
+    window.customElements.define(DesY6A2Bao.is, DesY6A2Bao);
+</script>
 
 <script>
     class DesY6A2Bao extends Polymer.Element {
