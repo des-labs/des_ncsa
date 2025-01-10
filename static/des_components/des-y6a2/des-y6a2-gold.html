@@ -14,16 +14,1269 @@
     <div class="card-content">
     <span>
     <h2>
-    <strong>Overview</strong>
+    <strong>Y6 Gold Catalog</strong>
     </h2>
     </span>
 
-    The Dark Energy Survey is releasing the final catalog of precise measurements of galaxies and stars within the DES 5000-square-degree footprint in the South Galactic Cap. The Y6 Gold catalog is derived from Data Release 2 and includes all six years of g,r,i,z,Y imaging measurements. Y6 Gold was formulated for the DES final cosmological analyses, but it has very general applicability. Compared to the previous Y3 Gold catalog, the depth, star/galaxy classification, photometric precision, and photometric uniformity are all substantially improved. Y6 Gold contains 669 million objects to i-band of 23.4 (S/N = 10 for extended objects). 
+    <h3>Overview</h3>
 
-    The Y6 Gold data products and data quality checks are described in <a href="https://doi.org/10.3847/1538-4365/abeb66"> (ref) </a>. Updated information will be published here, when applicable. In addition, we present a list of sample queries and known issues for this catalog.
+    <p>The Dark Energy Survey is releasing the final catalog of precise measurements of galaxies and stars within the DES 5000-square-degree footprint in the South Galactic Cap. The Y6 Gold catalog is derived from Data Release 2 and includes all six years of g,r,i,z,Y imaging measurements. Y6 Gold was formulated for the DES final cosmological analyses, but it has very general applicability. Compared to the previous Y3 Gold catalog, the depth, star/galaxy classification, photometric precision, and photometric uniformity are all substantially improved. Y6 Gold contains 669 million objects to i-band of 23.4 (S/N = 10 for extended objects). 
+
+    <p>The Y6 Gold data products and data quality checks are described in <a href="https://doi.org/10.3847/1538-4365/abeb66"> (Bechtol et al. 2025) </a>. Updated information will be published here, when applicable. In addition, DES has derived a set of survey properties maps across the DES footprint.
+    <hr>
+
+    <h2>Quick Links </h2>
+    <div style="text-align: center">
+        <paper-button   raised  class="desButton" on-click="_schema_top">Y6 Gold Table Schema</paper-button>
+        <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_gold" target="_blank">
+            <paper-button   raised  class="desButton">Y6 Gold Parquet Files</paper-button>
+        </a>
+        <paper-button   raised  class="desButton" on-click="_sysmap_top">Y6 Systematics Summary</paper-button>
+        <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_systematics" target="_blank">
+            <paper-button   raised  class="desButton">Y6 Systematics Maps</paper-button>
+        </a>
+    </div>
+    <hr />
+
+    <hr />
+
+    
+
+        
+    <h2>Y6 GOLD (v2.2) Availability</h2>
+
+    <p>The version 2.2 release of Y6 Gold underpins the DES Y6 Cosmological Analyses.  A query-able version has been made available through the <a href="https://datalab.noirlab.edu/">NOIRLab Astro Data Lab</a> (Y6 Gold is among the DES DR2 release products) and also through the <a href="https://cosmohub.pic.es">CosmoHub website</a>.  
+    <p>The Y6 GOLD catalog is available as a set of flat files hosted through the NSF supported Open Storage Network (OSN).  The catalogs are presented as a collection of 139 Parquet files (sharded using HealPix NSIDE=8 NESTED format) each with an accompanying JSON file summarizing RA-DEC ranges, MD5SUM and tabular format.  The typical shard size can be up to 14 GB and storage needed for the entire set is roughly 1.3 TB.
+    <hr />
+    <div style="text-align: center">
+        <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_gold" target="_blank">
+            <paper-button   raised  class="desButton">Y6 Gold Parquet Files</paper-button>
+        </a>
+    </div>
+    <hr />
+    <hr />
 
 
-    <h2> Content.... table schema, systematics... </h2>
+    <h2> Y6 Gold Schema </h2>
+    <div class="fixup" id="schema_top"></div>
+    <div class="fixdown"></div>
+    <hr />
+
+    <table class="wrapped">
+        <colgroup> <col style="width: 20%;"/> <col style="width: 8%;"/> <col style="width: 6%;"/> <col style="width: 12%;"/> <col style="width: 54%;"/> </colgroup>
+        <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Column</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Data Type</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Data Format</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Units</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+            </tr>
+            <tr>
+                <td>ALPHAWIN_J2000</td>
+                <td>double</td>
+                <td>8</td>
+                <td>degree</td>
+                <td>Right ascension with full precision (J2000 in ICRS system; not indexed) [degrees]</td>
+            </tr>
+            <tr>
+                <td>A_FIDUCIAL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Fiducial reddening correction (subtract from magnitude) [mag]</td>
+            </tr>
+            <tr>
+                <td>A_IMAGE</td>
+                <td>float</td>
+                <td>4</td>
+                <td>pixel</td>
+                <td>Major axis size based on an isophotal model [pixel]</td>
+            </tr>
+            <tr>
+                <td>GLAT</td>
+                <td>float</td>
+                <td>4</td>
+                <td>degree</td>
+                <td>Latitude in Galactic coordinates [degrees]</td>
+            </tr>
+            <tr>
+                <td>BADPIX_FRAC</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Fraction of pixels in the FITVD fitting region labelled as bad</td>
+            </tr>
+            <tr>
+                <td>BDF_DEBLEND_FLAGS</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>Shredder deblend flag bits: 1 no deblend, 2 PSF fit failed, 4 initial deblend on coadd failed, 8 multi-fit deblend failed</td>
+            </tr>
+            <tr>
+                <td>BDF_FLAGS</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>BDF fit flags</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_1_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Diagonal variance on the BDF flux g band</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_1_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (g-r)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_1_3</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (g-i)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_1_4</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (g-z)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_1_5</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (g-Y)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_2_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (r-g)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_2_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Diagonal variance on the BDF flux r band</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_2_3</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (r-i)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_2_4</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (r-z)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_2_5</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (r-Y)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_3_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (i-g)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_3_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (i-r)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_3_3</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Diagonal variance on the BDF flux i band</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_3_4</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (i-z)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_3_5</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (i-Y)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_4_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (z-g)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_4_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (z-r)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_4_3</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (z-i)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_4_4</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Diagonal variance on the BDF flux z band</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_4_5</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (z-Y)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_5_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (Y-g)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_5_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (Y-r)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_5_3</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (Y-i)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_5_4</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Off-diagonal variance on the BDF flux difference in (Y-z)</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_COV_5_5</td>
+                <td>double</td>
+                <td>8</td>
+                <td>(3.63 nJy)^2</td>
+                <td>Diagonal variance on the BDF flux Y band</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_ERR_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>3.63 nJy</td>
+                <td>Uncertainty on BDF_FLUX [3.63 nJy]</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_ERR_(GRIZY)_CORRECTED</td>
+                <td>double</td>
+                <td>8</td>
+                <td>3.63 nJy</td>
+                <td>Uncertainty on BDF_FLUX_CORRECTED [3.63 nJy]</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>3.63 nJy</td>
+                <td>Flux derived with BDF model. No aperture correction, top of atmosphere. [3.63 nJy]</td>
+            </tr>
+            <tr>
+                <td>BDF_FLUX_(GRIZY)_CORRECTED</td>
+                <td>double</td>
+                <td>8</td>
+                <td>3.63 nJy</td>
+                <td>BDF_FLUX corrected for interstellar extinction (i.e. de-reddened; top of Galaxy) and PSF aperture ratio (APER8 system). [3.63 nJy]</td>
+            </tr>
+            <tr>
+                <td>BDF_FRACDEV</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Fraction assigned to De Vaucouleurs profile in composite model.</td>
+            </tr>
+            <tr>
+                <td>BDF_FRACDEV_ERR</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Uncertainty on BDF_FRACDEV</td>
+            </tr>
+            <tr>
+                <td>BDF_GMR_ERR</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Uncertainty on g-r color, accounting for covariance [mag]</td>
+            </tr>
+            <tr>
+                <td>BDF_G_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>First component of gamma giving axis ratio and position angle of ellipse fit</td>
+            </tr>
+            <tr>
+                <td>BDF_G_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Second component of gamma giving axis ratio and position angle of ellipse fit</td>
+            </tr>
+            <tr>
+                <td>BDF_G_COV_1_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Covariance of gamma 1,2 axis ratio and position angle components (1,1) term</td>
+            </tr>
+            <tr>
+                <td>BDF_G_COV_1_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Covariance of gamma 1,2 axis ratio and position angle components (1,2) term</td>
+            </tr>
+            <tr>
+                <td>BDF_G_COV_2_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Covariance of gamma 1,2 axis ratio and position angle components (2,1) term</td>
+            </tr>
+            <tr>
+                <td>BDF_G_COV_2_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Covariance of gamma 1,2 axis ratio and position angle components (2,2) term</td>
+            </tr>
+            <tr>
+                <td>BDF_IMZ_ERR</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Uncertainty on i-z color, accounting for covariance [mag]</td>
+            </tr>
+            <tr>
+                <td>BDF_MAG_ERR_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Uncertainty on BDF_MAG [mag]</td>
+            </tr>
+            <tr>
+                <td>BDF_MAG_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Magnitude measured by FITVD BDF model. No aperture correction, top of atmosphere [mag]</td>
+            </tr>
+            <tr>
+                <td>BDF_MAG_(GRIZY)_CORRECTED</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>BDF_MAG corrected for interstellar extinction (de-reddened top of Galaxy) and PSF aperture ratio (APER8 system) [mag]</td>
+            </tr>
+            <tr>
+                <td>BDF_NFEV</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>Number of function evaluations during BDF fit.</td>
+            </tr>
+            <tr>
+                <td>BDF_NTRY</td>
+                <td>number</td>
+                <td>(5,0)</td>
+                <td></td>
+                <td>Number of times the fit was attempted.</td>
+            </tr>
+            <tr>
+                <td>BDF_PARS_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td>arcsec</td>
+                <td>BDF fit parameter 1: row-offset fit position of object in MEDs postage stamp [arcsec]</td>
+            </tr>
+            <tr>
+                <td>BDF_PARS_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td>arcsec</td>
+                <td>BDF fit parameter 2: col-offset fit position of object in MEDs postage stamp [arcsec]</td>
+            </tr>
+            <tr>
+                <td>BDF_PARS_ERR_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td>arcsec</td>
+                <td>Error on x-offset [arcsec]</td>
+            </tr>
+            <tr>
+                <td>BDF_PARS_ERR_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td>arcsec</td>
+                <td>Error on y-offset [arcsec]</td>
+            </tr>
+            <tr>
+                <td>BDF_RMI_ERR</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Uncertainty on r-i color, accounting for covariance [mag]</td>
+            </tr>
+            <tr>
+                <td>BDF_S2N</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Signal-to-noise on BDF fit, combining all bands</td>
+            </tr>
+            <tr>
+                <td>BDF_T</td>
+                <td>double</td>
+                <td>8</td>
+                <td>arcsec^2</td>
+                <td>Intrinsic squared size of best-fit BDF model, before PSF convolution [arcsec^2]</td>
+            </tr>
+            <tr>
+                <td>BDF_T_ERR</td>
+                <td>double</td>
+                <td>8</td>
+                <td>arcsec^2</td>
+                <td>Uncertainty on BDF_T [arcsec^2]</td>
+            </tr>
+            <tr>
+                <td>BDF_T_RATIO</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Ratio of BDF_T of the object to PSF_T at the location of the object (stars are near zero).</td>
+            </tr>
+            <tr>
+                <td>BDF_ZMY_ERR</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Uncertainty on z-Y color, accounting for covariance [mag]</td>
+            </tr>
+            <tr>
+                <td>B_IMAGE</td>
+                <td>float</td>
+                <td>4</td>
+                <td>pixel</td>
+                <td>Minor axis size based on an isophotal model [pixel]</td>
+            </tr>
+            <tr>
+                <td>COADD_OBJECT_ID</td>
+                <td>number</td>
+                <td>(11,0)</td>
+                <td></td>
+                <td>Unique identifier for the coadded objects</td>
+            </tr>
+            <tr>
+                <td>CONC</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Concentration index -- values near 0 indicate stellar object, significantly above 0 extended</td>
+            </tr>
+            <tr>
+                <td>CONC_FLAGS</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>Flag for CONC index fit failure (0 = success; 1 = failure)</td>
+            </tr>
+            <tr>
+                <td>COVERFRAC_GRIZ</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Fractional area of HEALPix (nside=4096) pixel covered simultaneously by griz bands</td>
+            </tr>
+            <tr>
+                <td>COVERFRAC_GRIZY</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Fractional area of HEALPix (nside=4096) pixel covered simultaneously by grizY bands</td>
+            </tr>
+            <tr>
+                <td>COVERFRAC_RIZ</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Fractional area of HEALPix (nside=4096) pixel covered simultaneously by riz bands</td>
+            </tr>
+            <tr>
+                <td>COVERFRAC_RIZY</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Fractional area of HEALPix (nside=4096) pixel covered simultaneously by rizY bands</td>
+            </tr>
+            <tr>
+                <td>DEC</td>
+                <td>number</td>
+                <td>(9,6)</td>
+                <td>degrees</td>
+                <td>Declination with quantized precision for indexing (J2000 in ICRS system; see DELTAWIN_J2000 for full precision) [degrees]</td>
+            </tr>
+            <tr>
+                <td>DELTAWIN_J2000</td>
+                <td>double</td>
+                <td>8</td>
+                <td>degrees</td>
+                <td>Declination with full precision (J2000 in ICRS system; not indexed) [degrees]</td>
+            </tr>
+            <tr>
+                <td>DNF_D1</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>DNF photo-z photometric directional distance to nearest neighbor.</td>
+            </tr>
+            <tr>
+                <td>DNF_DE1</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>DNF photo-z photometric Euclidean distance to nearest neighbor.</td>
+            </tr>
+            <tr>
+                <td>DNF_ID1</td>
+                <td>number</td>
+                <td>(20,0)</td>
+                <td></td>
+                <td>DNF photo-z COADD_OBJECT_ID corresponding to the nearest neighbor in the training sample.</td>
+            </tr>
+            <tr>
+                <td>DNF_Z</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>DNF photo-z primary point estimate obtained by fitting to the directional neighborhood. Useful for clasification in tomographic bins.</td>
+            </tr>
+            <tr>
+                <td>DNF_ZN</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>DNF photo-z nearest neighbor spec-z. Useful for estimating N(z) for a given sample.</td>
+            </tr>
+            <tr>
+                <td>DNF_ZSIGMA</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>DNF photo-z uncertainty estimate from photometric uncertainties and residuals from the neighborhood fit</td>
+            </tr>
+            <tr>
+                <td>DNF_ZERR_FIT</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>DNF photo-z error term derived from the residuals of the regression fit</td>
+            </tr>
+            <tr>
+                <td>DNF_ZERR_PARAM</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>DNF photo-z error term due to magnitude/flux uncertainties propagation</td>
+            </tr>
+            <tr>
+                <td>DNF_NNEIGHBORS</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>DNF photo-z number of neighbors used for the DNF_Z estimate</td>
+            </tr>
+            <tr>
+                <td>EBV_SFD98</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>E(B-V) reddening coefficient from Schlegel, Finkbeiner & Davis, 1998 [mag]</td>
+            </tr>
+            <tr>
+                <td>ERRA_IMAGE</td>
+                <td>float</td>
+                <td>4</td>
+                <td>pixel</td>
+                <td>Uncertainty in major axis size, from isophotal model [pixel]</td>
+            </tr>
+            <tr>
+                <td>ERRB_IMAGE</td>
+                <td>float</td>
+                <td>4</td>
+                <td>pixel</td>
+                <td>Uncertainty in minor axis size, from isophotal model [pixel]</td>
+            </tr>
+            <tr>
+                <td>ERRTHETA_IMAGE</td>
+                <td>float</td>
+                <td>4</td>
+                <td>degrees</td>
+                <td>Uncertainty in source position, from isophotal model [degrees]</td>
+            </tr>
+            <tr>
+                <td>EXT_COADD</td>
+                <td>number</td>
+                <td>(3,0)</td>
+                <td></td>
+                <td>Extended object classification from coadd SourceExtractor measurements. 0: high-confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high-confidence galaxies; -9: No data</td>
+            </tr>
+            <tr>
+                <td>EXT_FITVD</td>
+                <td>number</td>
+                <td>(3,0)</td>
+                <td></td>
+                <td>Extended object classification from FITVD multi-epoch fit.  0: high-confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; 4: pure galaxy sample; -9: No data</td>
+            </tr>
+            <tr>
+                <td>EXT_MASH</td>
+                <td>number</td>
+                <td>(3,0)</td>
+                <td></td>
+                <td>Extended object classification combined for COADD, WAVG, and FITVD. 0: high-confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; 4: pure galaxy sample; -9: No data</td>
+            </tr>
+            <tr>
+                <td>EXT_WAVG</td>
+                <td>number</td>
+                <td>(3,0)</td>
+                <td></td>
+                <td>Extended object classification from WAVG single-epoch measurements. 0: high-confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high-confidence galaxies; -9: No data</td>
+            </tr>
+            <tr>
+                <td>EXT_XGB</td>
+                <td>number</td>
+                <td>(3,0)</td>
+                <td></td>
+                <td>Extended object classification based on XGBoost morphological classifier: 0: high-confidence stars; 1: candidate stars; 2: mostly galaxies; 3: high confidence galaxies; 4: pure galaxy sample; -9: No data</td>
+            </tr>
+            <tr>
+                <td>FITVD_FLAGS</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>Flag for FITVD BDF fit failure (0=success, 1=failure)</td>
+            </tr>
+            <tr>
+                <td>FLAGSTR</td>
+                <td>char</td>
+                <td>32</td>
+                <td></td>
+                <td>Brief description of BDF quality flag. See Section 3.4 of Bechtol et al. (2025)</td>
+            </tr>
+            <tr>
+                <td>FLAGS_FOOTPRINT</td>
+                <td>number</td>
+                <td>(5, 0)</td>
+                <td></td>
+                <td>Use FLAGS_FOOTPRINT == 1 to select objects inside the standard "Gold" footprint. See Section 5.1 of Bechtol et al. (2025)</td>
+            </tr>
+            <tr>
+                <td>FLAGS_FOREGROUND</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Flag describing whether the object is contained in a region with a foreground astrophysical object; recommend FLAGS_FOREGROUND = 0 for general extragalactic studies. See Section 5.2 of Bechtol et al. (2025).</td>
+            </tr>
+            <tr>
+                <td>FLAGS_GOLD</td>
+                <td>number</td>
+                <td>(5,0)</td>
+                <td></td>
+                <td>Flag describing object anomalies; recommed FLAGS_GOLD = 0 for most analyses. See Section 4.3 of Bechtol et al. (2025)</td>
+            </tr>
+            <tr>
+                <td>FLUX_RADIUS_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>pixel</td>
+                <td>Half-light radius for the object, from elliptical growth-curve, modeled in 2 dimensions [pixel]</td>
+            </tr>
+            <tr>
+                <td>FOF_ID</td>
+                <td>number</td>
+                <td>(20,0)</td>
+                <td></td>
+                <td>Friends-of-friends shredder group ID number</td>
+            </tr>
+            <tr>
+                <td>FOF_SIZE</td>
+                <td>number</td>
+                <td>(5,0)</td>
+                <td></td>
+                <td>Friends-of-friends shredder group size</td>
+            </tr>
+            <tr>
+                <td>GAP_FLUX_ERR_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>3.63 nJy</td>
+                <td>Uncertainty on Gaussian aperture flux [3.63 nJy]</td>
+            </tr>
+            <tr>
+                <td>GAP_FLUX_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>3.63 nJy</td>
+                <td>Gaussian Aperture fluxes with FWHM=4 arcsec  [3.63 nJy]</td>
+            </tr>
+            <tr>
+                <td>GAP_MAG_ERR_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Uncertainty on Gaussian aperture magnitude [mag]</td>
+            </tr>
+            <tr>
+                <td>GAP_MAG_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Magnitude measured by Gaussian aperture fit [mag]</td>
+            </tr>
+            <tr>
+                <td>HPIX_1024</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>HEALPix index for NSIDE = 1024 in NEST schema for the object</td>
+            </tr>
+            <tr>
+                <td>HPIX_16384</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>HEALPix index for NSIDE = 16384 in NEST schema for the object</td>
+            </tr>
+            <tr>
+                <td>HPIX_32</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>HEALPix index for NSIDE = 32 in NEST schema for the object</td>
+            </tr>
+            <tr>
+                <td>HPIX_4096</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>HEALPix index for NSIDE = 4096 in NEST schema for the object</td>
+            </tr>
+            <tr>
+                <td>HPIX_64</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>HEALPix index for NSIDE = 64 in NEST schema for the object</td>
+            </tr>
+            <tr>
+                <td>IMAFLAGS_ISO_(GRIZY)</td>
+                <td>number</td>
+                <td>(6,0)</td>
+                <td></td>
+                <td>Flag identifying sources with missing/flagged pixels, considering all single-epoch images</td>
+            </tr>
+            <tr>
+                <td>KRON_RADIUS</td>
+                <td>float</td>
+                <td>4</td>
+                <td>pixel</td>
+                <td>Kron radius measured from detection image [pixel]</td>
+            </tr>
+            <tr>
+                <td>GLON</td>
+                <td>float</td>
+                <td>4</td>
+                <td>degrees</td>
+                <td>Longitude in Galactic coordinates [degrees]</td>
+            </tr>
+            <tr>
+                <td>MAGERR_APER_4_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Uncertainty in MAG_APER_4 [mag]</td>
+            </tr>
+            <tr>
+                <td>MAGERR_APER_8_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Uncertainty in MAG_APER_8 [mag]</td>
+            </tr>
+            <tr>
+                <td>MAGERR_AUTO_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Uncertainty in MAG_AUTO [mag]</td>
+            </tr>
+            <tr>
+                <td>MAGERR_DETMODEL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Uncertainty in MAG_DETMODEL [mag]</td>
+            </tr>
+            <tr>
+                <td>MAG_APER_4_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Magnitude measured in circular aperture with 1.9488 arcsec diameter [mag]</td>
+            </tr>
+            <tr>
+                <td>MAG_APER_8_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Magnitude measured in circular aperture magnitude with 5.8437 arcsec diameter [mag]</td>
+            </tr>
+            <tr>
+                <td>MAG_AUTO_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Magnitude measured in elliptical aperture based on Kron radius [mag]</td>
+            </tr>
+            <tr>
+                <td>MAG_DETMODEL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Magnitude measured by a galaxy model fit (simple Sersic disk with index = 1) to the objects in the detection image [mag]</td>
+            </tr>
+            <tr>
+                <td>MASK_FLAGS</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>Flag indicating the object was masked, e.g. due to bright star masking</td>
+            </tr>
+            <tr>
+                <td>MOLY_NUMBER_(GRIZY)</td>
+                <td>number</td>
+                <td>(20,0)</td>
+                <td></td>
+                <td>Unique identifier of the MOLYGON that this object resides in.</td>
+            </tr>
+            <tr>
+                <td>MU_EFF_MODEL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag/arcsec^2</td>
+                <td>Effective model surface brightness at the isophote which includes half of the flux from the model [mag/arcsec^2]</td>
+            </tr>
+            <tr>
+                <td>MU_MAX_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag/arcsec^2</td>
+                <td>Surface brightness at brightest pixel [mag/arcsec^2]</td>
+            </tr>
+            <tr>
+                <td>MU_MAX_MODEL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag/arcsec^2</td>
+                <td>Maximum surface brightness using the whole area inside the isophote used for MU_EFF_MODEL [mag/arcsec^2]</td>
+            </tr>
+            <tr>
+                <td>MU_MEAN_MODEL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag/arcsec^2</td>
+                <td>Mean surface brightness using the whole area inside the isophote used for MU_EFF_MODEL [mag/arcsec^2]</td>
+            </tr>
+            <tr>
+                <td>MU_THRESHOLD_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag/arcsec^2</td>
+                <td>Surface brightness threshold (SourceExtractor parameter) [mag/arcsec^2]</td>
+            </tr>
+            <tr>
+                <td>NEPOCHS_(GRIZY)</td>
+                <td>number</td>
+                <td>(6,0)</td>
+                <td></td>
+                <td>Number of good single-epoch detections of the coadd object</td>
+            </tr>
+            <tr>
+                <td>NITER_MODEL_(GRIZY)</td>
+                <td>number</td>
+                <td>(5,0)</td>
+                <td></td>
+                <td>Number of iterations needed to converge on the MODEL parameters</td>
+            </tr>
+            <tr>
+                <td>N_IMAGES_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Number of (grizY)-band exposures at the object location (from the HEALPix nside=4096 map)</td>
+            </tr>
+            <tr>
+                <td>OBJECT_NUMBER</td>
+                <td>number</td>
+                <td>(6,0)</td>
+                <td></td>
+                <td>SourceExtractor unique running object number within a DES coadd tile.</td>
+            </tr>
+            <tr>
+                <td>PARENT_NUMBER</td>
+                <td>number</td>
+                <td>(6,0)</td>
+                <td></td>
+                <td>SourceExtractor parent object ID before deblending.</td>
+            </tr>
+            <tr>
+                <td>PFW_ATTEMPT_ID</td>
+                <td>number</td>
+                <td>(12,0)</td>
+                <td></td>
+                <td>DESDM internal processing index number</td>
+            </tr>
+            <tr>
+                <td>PSF_FLUX_APER_8_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>3.63 nJy</td>
+                <td>Flux measured by FITVD PSF model in APER8 system (reddened, top of atmosphere) [3.63 nJy]</td>
+            </tr>
+            <tr>
+                <td>PSF_FLUX_ERR_APER_8_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>3.63 nJy</td>
+                <td>Uncertainty on PSF_FLUX_APER_8 [3.63 nJy]</td>
+            </tr>
+            <tr>
+                <td>PSF_FLUX_FLAGS_(GRIZY)</td>
+                <td>number</td>
+                <td>(10,0)</td>
+                <td></td>
+                <td>Flags for FITVD PSF flux measurement: 0=success, 1=bad variance, 512=divide by zero, 1024=degrees of freedom are zero</td>
+            </tr>
+            <tr>
+                <td>PSF_FLUX_RATIO_APER_8_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>PSF aperture correction to put BDF corrected magnitudes onto FGCM photometric system</td>
+            </tr>
+            <tr>
+                <td>PSF_FLUX_S2N_APER_8_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>S/N in PSF flux measurement from FITVD in APER8 system</td>
+            </tr>
+            <tr>
+                <td>PSF_G_1</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Ellipticity of the multi-Gaussian model fit to the PSF (component 1) at the location of the object</td>
+            </tr>
+            <tr>
+                <td>PSF_G_2</td>
+                <td>double</td>
+                <td>8</td>
+                <td></td>
+                <td>Ellipticity of the multi-Gaussian model fit to the PSF (component 2) at the location of the object</td>
+            </tr>
+            <tr>
+                <td>PSF_MAG_APER_8_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Magnitude measured by FITVD PSF model in APER8 system (reddened top of atmosphere) [mag]</td>
+            </tr>
+            <tr>
+                <td>PSF_MAG_ERR_APER_8_(GRIZY)</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Uncertainty in PSF_MAG_APER8 [mag]</td>
+            </tr>
+            <tr>
+                <td>PSF_MAG_APER_8_(GRIZY)_CORRECTED</td>
+                <td>double</td>
+                <td>8</td>
+                <td>mag</td>
+                <td>Magnitude measured by FITVD PSF model corrected for interstellar extinction (de-reddened top of Galaxy) and PSF aperture ratio (APER8 system). Recommended for point-source studies. [mag]</td>
+            </tr>
+            <tr>
+                <td>PSF_T</td>
+                <td>double</td>
+                <td>8</td>
+                <td>arcsec^2</td>
+                <td>Squared-size for a multi-Gaussian model fit to the PSF at the location of the object [arcsec^2]</td>
+            </tr>
+            <tr>
+                <td>RA</td>
+                <td>number</td>
+                <td>(9,6)</td>
+                <td>degrees</td>
+                <td>Right ascension with quantized precision for indexing (J2000 in ICRS system; see ALPHAWIN_J2000 for full precision) [degrees]</td>
+            </tr>
+            <tr>
+                <td>SPREADERR_MODEL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Uncertainty in SPREAD_MODEL</td>
+            </tr>
+            <tr>
+                <td>SPREAD_MODEL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Likelihood ratio between PSF model fit and an exponential model fit measured on the coadd. See Desai et al. (2012)</td>
+            </tr>
+            <tr>
+                <td>S_EXTRACTOR_FLAGS_(GRIZY)</td>
+                <td>number</td>
+                <td>(3,0)</td>
+                <td></td>
+                <td>Flag for SourceExtractor measurement</td>
+            </tr>
+            <tr>
+                <td>THETA_J2000</td>
+                <td>float</td>
+                <td>4</td>
+                <td>degrees</td>
+                <td>Position angle of source in J2000 coordinates, from non-windowed measurement [degrees]</td>
+            </tr>
+            <tr>
+                <td>TILENAME</td>
+                <td>char</td>
+                <td>12</td>
+                <td></td>
+                <td>Unique name of DES coadd tile containing the object</td>
+            </tr>
+            <tr>
+                <td>WAVG_MAGERR_PSF_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Uncertainty in WAVG_MAG_PSF [mag]</td>
+            </tr>
+            <tr>
+                <td>WAVG_MAG_PSF_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td>mag</td>
+                <td>Magnitude measured by weighted-average of PSF fit to single-epoch detections [mag]</td>
+            </tr>
+            <tr>
+                <td>WAVG_SPREADERR_MODEL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Uncertainty in WAVG_SPREAD_MODEL</td>
+            </tr>
+            <tr>
+                <td>WAVG_SPREAD_MODEL_(GRIZY)</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Weighted-average SPREAD_MODEL from single-epoch detections</td>
+            </tr>
+            <tr>
+                <td>XGB_PRED</td>
+                <td>float</td>
+                <td>4</td>
+                <td></td>
+                <td>Output pseudo-probability of the XGBoost star/galaxy classifer. Galaxies have XGB_PRED ~ 0 and stars have XGB_PRED ~ 1. See Section 4.2 of Bechtol et al. (2025).</td>
+            </tr>
+            <tr>
+                <td>XWIN_IMAGE</td>
+                <td>double</td>
+                <td>8</td>
+                <td>pixel</td>
+                <td>X-centroid from windowed measurements on coadded detection image [pixel]</td>
+            </tr>
+            <tr>
+                <td>YWIN_IMAGE</td>
+                <td>double</td>
+                <td>8</td>
+                <td>pixel</td>
+                <td>Y-centroid from windowed measurements on coadded detection image [pixel]</td>
+            </tr>
+        </tbody>
+    </table> 
+    <hr />
+    <hr />
+
+    <div class="fixup" id="sysmap_top"></div>
+    <div class="fixdown"></div>
+
+    <h2> Systematics Maps </h2>
+
+    <p>A wide variety of systematics maps have been derived and used in the DES Collaboration's analysis of the Y6 Data set.  Each map uses a <a href="https://healsparse.readthedocs.io/en/stable/">HealSparse</a> format to provide variable resolution as the quantities tracked can vary on a wide variety of angular scales.
+
+    <table class="wrapped">
+        <colgroup> <col style="width: 20%;"/> <col style="width: 10%;"/><col style="width: 80%;"/> </colgroup>
+        <tbody>
+            <tr>
+              <th style="text-align: center;">
+                <span>Systematic</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Type</span>
+              </th>
+              <th style="text-align: center;">
+                <span>Description</span>
+              </th>
+            </tr>
+            <tr>
+                <td>airmass</td>
+                <td>wmean</td>
+                <td>Airmass of observations contributing to the Y6/DR2 coadd</td> 
+            </tr>
+            <tr>
+                <td>dcr_ddec</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>dcr_dra</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>dcr_e1</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>dcr_e2</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>exptime</td>
+                <td>sum</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>fwhm</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>fraction_of_day</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>fraction_of_year</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>maglim</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>mjd</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>nexp</td>
+                <td>sum</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>skybrite</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>skybrite</td>
+                <td>wmean-scaled</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>skysigma</td>
+                <td>wmean</td> 
+                <td> </td> 
+            </tr>
+            <tr>
+                <td>skysigma</td>
+                <td>wmean-scaled</td> 
+                <td> </td> 
+            </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align: center">
+        <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_systematics" target="_blank">
+            <paper-button   raised  class="desButton">Y6 Systematics Maps</paper-button>
+        </a>
+    </div>
+
+    <hr />
+
     </div>
 
 </des-card>
@@ -34,6 +1287,8 @@
     class DesY6A2Gold extends Polymer.Element {
       static get is() { return 'des-y6a2-gold'; }
       _top() {this.$.y6_gold_top.scrollIntoView();}
+      _schema_top() {this.$.schema_top.scrollIntoView();}
+      _sysmap_top() {this.$.sysmap_top.scrollIntoView();}
     }
     window.customElements.define(DesY6A2Gold.is, DesY6A2Gold);
  </script>
