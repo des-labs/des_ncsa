@@ -1,17 +1,15 @@
 <dom-module id="des-y6a2-gold">
 
-
 <template>
 
 <style include="shared-styles">
 </style>
 
-
-
 <div class="fixup" id="y6_gold_top"></div>
 <div class="fixdown"></div>
 <des-card heading ="Y6 Gold Products">
     <div class="card-content">
+
     <span>
     <h2>
     <strong>Y6 Gold Catalog</strong>
@@ -1172,6 +1170,8 @@
 
     <p>A wide variety of systematics maps have been derived and used in the DES Collaboration's analysis of the Y6 Data set.  Each map uses a <a href="https://healsparse.readthedocs.io/en/stable/">HealSparse</a> format to provide variable resolution as the quantities tracked can vary on a wide variety of angular scales.
 
+    <p><strong>Not yet available</strong>
+
     <table class="wrapped">
         <colgroup> <col style="width: 20%;"/> <col style="width: 10%;"/><col style="width: 80%;"/> </colgroup>
         <tbody>
@@ -1189,37 +1189,22 @@
             <tr>
                 <td>airmass</td>
                 <td>wmean</td>
-                <td>Airmass of observations contributing to the Y6/DR2 coadd</td> 
+                <td>Airmass (secant of zenith angle) for observations contributing to the Y6/DR2 coadd</td> 
             </tr>
             <tr>
-                <td>dcr_ddec</td>
+                <td>dcr_(ddec/dra/e1/e2)</td>
                 <td>wmean</td> 
-                <td> </td> 
-            </tr>
-            <tr>
-                <td>dcr_dra</td>
-                <td>wmean</td> 
-                <td> </td> 
-            </tr>
-            <tr>
-                <td>dcr_e1</td>
-                <td>wmean</td> 
-                <td> </td> 
-            </tr>
-            <tr>
-                <td>dcr_e2</td>
-                <td>wmean</td> 
-                <td> </td> 
+                <td>Differential chromatic refraction effect on position and ellipticity (relative shifts)</td> 
             </tr>
             <tr>
                 <td>exptime</td>
                 <td>sum</td> 
-                <td> </td> 
+                <td>Exposure time</td> 
             </tr>
             <tr>
                 <td>fwhm</td>
                 <td>wmean</td> 
-                <td> </td> 
+                <td>Average FWHM pf the 2D elliptical Moffat funtion fit to the PSFex model (0.263 arcsec/pix) </td> 
             </tr>
             <tr>
                 <td>fraction_of_day</td>
@@ -1234,7 +1219,7 @@
             <tr>
                 <td>maglim</td>
                 <td>wmean</td> 
-                <td> </td> 
+                <td>Magnitude limit estimated from the weight maps</td> 
             </tr>
             <tr>
                 <td>mjd</td>
@@ -1244,27 +1229,17 @@
             <tr>
                 <td>nexp</td>
                 <td>sum</td> 
-                <td> </td> 
+                <td>Number of exposures</td> 
             </tr>
             <tr>
                 <td>skybrite</td>
-                <td>wmean</td> 
-                <td> </td> 
-            </tr>
-            <tr>
-                <td>skybrite</td>
-                <td>wmean-scaled</td> 
-                <td> </td> 
+                <td>wmean/wmean-scaled</td> 
+                <td>Sky brightness from the sky background model</td> 
             </tr>
             <tr>
                 <td>skysigma</td>
-                <td>wmean</td> 
-                <td> </td> 
-            </tr>
-            <tr>
-                <td>skysigma</td>
-                <td>wmean-scaled</td> 
-                <td> </td> 
+                <td>wmean/wmean-scaeled</td> 
+                <td>Square root of the sky variance</td> 
             </tr>
         </tbody>
     </table>
