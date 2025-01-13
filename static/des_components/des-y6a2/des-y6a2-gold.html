@@ -20,7 +20,7 @@
 
     <p>The Dark Energy Survey is releasing the final catalog of precise measurements of galaxies and stars within the DES 5000-square-degree footprint in the South Galactic Cap. The Y6 Gold catalog is derived from Data Release 2 and includes all six years of g,r,i,z,Y imaging measurements. Y6 Gold was formulated for the DES final cosmological analyses, but it has very general applicability. Compared to the previous Y3 Gold catalog, the depth, star/galaxy classification, photometric precision, and photometric uniformity are all substantially improved. Y6 Gold contains 669 million objects to i-band of 23.4 (S/N = 10 for extended objects). 
 
-    <p>The Y6 Gold data products and data quality checks are described in <a href="https://doi.org/10.3847/1538-4365/abeb66"> (Bechtol et al. 2025) </a>. Updated information will be published here, when applicable. In addition, DES has derived a set of survey properties maps across the DES footprint.
+    <p>The Y6 Gold data products and data quality checks are described in <a href="https://doi.org/10.48550/arXiv.2501.05739"> (Bechtol et al. 2025) </a>. Updated information will be published here, when applicable. In addition to the Y6 Gold catalog, DES has derived a set of survey properties maps that accompany these Y6 Cosmology analyses which are also available below.
     <hr>
 
     <h2>Quick Links </h2>
@@ -37,14 +37,12 @@
     <hr />
 
     <hr />
-
-    
-
+    <br />
         
     <h2>Y6 GOLD (v2.2) Availability</h2>
 
-    <p>The version 2.2 release of Y6 Gold underpins the DES Y6 Cosmological Analyses.  A query-able version has been made available through the <a href="https://datalab.noirlab.edu/">NOIRLab Astro Data Lab</a> (Y6 Gold is among the DES DR2 release products) and also through the <a href="https://cosmohub.pic.es">CosmoHub website</a>.  
-    <p>The Y6 GOLD catalog is available as a set of flat files hosted through the NSF supported Open Storage Network (OSN).  The catalogs are presented as a collection of 139 Parquet files (sharded using HealPix NSIDE=8 NESTED format) each with an accompanying JSON file summarizing RA-DEC ranges, MD5SUM and tabular format.  The typical shard size can be up to 14 GB and storage needed for the entire set is roughly 1.3 TB.
+    <p>The version 2.2 release of Y6 Gold underpins the DES Y6 Cosmological Analyses.  A query-able version has been made available through the <a href="https://datalab.noirlab.edu/">NOIRLab Astro Data Lab</a> (Y6 Gold is among the DES DR2 release products) and also through the <a href="https://cosmohub.pic.es">CosmoHub website</a>.  </p>
+    <p>The Y6 GOLD catalog is available as a set of flat files hosted through the NSF supported Open Storage Network (OSN).  The catalogs are presented as a collection of 139 Parquet files (sharded using HealPix NSIDE=8 NESTED format) each with an accompanying JSON file summarizing RA-DEC ranges, MD5SUM and tabular format.  The typical shard size can be up to 14 GB and storage needed for the entire set is roughly 1.3 TB. </p>
     <hr />
     <div style="text-align: center">
         <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_gold" target="_blank">
@@ -1162,18 +1160,21 @@
     </table> 
     <hr />
     <hr />
+    <br />
+    <br />
 
     <div class="fixup" id="sysmap_top"></div>
     <div class="fixdown"></div>
 
     <h2> Systematics Maps </h2>
 
-    <p>A wide variety of systematics maps have been derived and used in the DES Collaboration's analysis of the Y6 Data set.  Each map uses a <a href="https://healsparse.readthedocs.io/en/stable/">HealSparse</a> format to provide variable resolution as the quantities tracked can vary on a wide variety of angular scales.
+    <p>A wide variety of systematics maps have been derived and used in the DES Collaboration's analysis of the Y6 Data set.  There are two varieties and some quantities have been calculated using both methods.  The first variety were generated casting systematics using a Mangle representation into a HealPix Nside=4096 resolution.  The second use decasu (a method being developed for LSST/Rubin systemetics maps) which use a <a href="https://healsparse.readthedocs.io/en/stable/">HealSparse</a> format to provide variable resolution in an effort to track quantities to smaller angular scales.</p>
+    <p>See <a href="https://doi.org/10.48550/arXiv.2501.05739">Bechtol et al. (2025)</a> for more details.</p>
 
-    <p><strong>Not yet available</strong>
+    <p><strong>Systematics maps are not yet available</strong> </p>
 
     <table class="wrapped">
-        <colgroup> <col style="width: 20%;"/> <col style="width: 10%;"/><col style="width: 80%;"/> </colgroup>
+        <colgroup> <col style="width: 20%;"/> <col style="width: 10%;"/> <col style="width: 80%;"/> </colgroup>
         <tbody>
             <tr>
               <th style="text-align: center;">
@@ -1185,6 +1186,9 @@
               <th style="text-align: center;">
                 <span>Description</span>
               </th>
+            </tr>
+            <tr>
+                <th colspan="3" style="text-align: center; background-color:Gray;">decasu generated (healsparse)</th>
             </tr>
             <tr>
                 <td>airmass</td>
@@ -1219,7 +1223,7 @@
             <tr>
                 <td>maglim</td>
                 <td>wmean</td> 
-                <td>Magnitude limit estimated from the weight maps</td> 
+                <td>Magnitude limit estimated from the weight maps (10-sigma)</td> 
             </tr>
             <tr>
                 <td>mjd</td>
@@ -1241,8 +1245,13 @@
                 <td>wmean/wmean-scaeled</td> 
                 <td>Square root of the sky variance</td> 
             </tr>
+            <tr>
+                <th colspan="3" style="text-align: center; background-color:Gray;">Mangle generated (healpix)</th>
+            </tr>
         </tbody>
     </table>
+
+    <br />
 
     <div style="text-align: center">
         <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_systematics" target="_blank">
@@ -1251,6 +1260,8 @@
     </div>
 
     <hr />
+    <br />
+    <br />
 
     </div>
 
@@ -1266,6 +1277,6 @@
       _sysmap_top() {this.$.sysmap_top.scrollIntoView();}
     }
     window.customElements.define(DesY6A2Gold.is, DesY6A2Gold);
- </script>
+</script>
 
 </dom-module>
