@@ -43,6 +43,8 @@
 
     <p>The version 2.2 release of Y6 Gold underpins the DES Y6 Cosmological Analyses.  A query-able version has been made available through the <a href="https://datalab.noirlab.edu/">NOIRLab Astro Data Lab</a> (Y6 Gold is among the DES DR2 release products) and also through the <a href="https://cosmohub.pic.es">CosmoHub website</a>.  </p>
     <p>The Y6 GOLD catalog is available as a set of flat files hosted through the NSF supported Open Storage Network (OSN).  The catalogs are presented as a collection of 139 Parquet files (sharded using HealPix NSIDE=8 NESTED format) each with an accompanying JSON file summarizing RA-DEC ranges, MD5SUM and tabular format.  The typical shard size can be up to 14 GB and storage needed for the entire set is roughly 1.3 TB. </p>
+    <p>The binary table data (i.e. the .parquet format files) can be read with tools such as <a href="https://github.com/apache/arrow">pyarrow</a> or <a href="https://pypi.org/project/fastparquet/">fastparquet</a> python libraries or read into dataframes.  Further, a user can load one or more .parquet shards of the full Y6 Gold data into a database such as <a href="https://duckdb.org/">'Duck DB'</a> and then perform SQL-style queries on the database to retrieve subsets of objects in the catalog which meet your desired search criteria.</p>
+
     <hr />
     <div style="text-align: center">
         <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_gold" target="_blank">
