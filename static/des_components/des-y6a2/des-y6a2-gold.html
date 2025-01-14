@@ -31,7 +31,7 @@
         </a>
         <paper-button   raised  class="desButton" on-click="_sysmap_top">Y6 Systematics Summary</paper-button>
         <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_systematics" target="_blank">
-            <paper-button   raised  class="desButton">Y6 Systematics Maps</paper-button>
+            <paper-button   raised  class="desButton">Y6 Systematics Maps (not yet available)</paper-button>
         </a>
     </div>
     <hr />
@@ -43,6 +43,9 @@
 
     <p>The version 2.2 release of Y6 Gold underpins the DES Y6 Cosmological Analyses.  A query-able version has been made available through the <a href="https://datalab.noirlab.edu/">NOIRLab Astro Data Lab</a> (Y6 Gold is among the DES DR2 release products) and also through the <a href="https://cosmohub.pic.es">CosmoHub website</a>.  </p>
     <p>The Y6 GOLD catalog is available as a set of flat files hosted through the NSF supported Open Storage Network (OSN).  The catalogs are presented as a collection of 139 Parquet files (sharded using HealPix NSIDE=8 NESTED format) each with an accompanying JSON file summarizing RA-DEC ranges, MD5SUM and tabular format.  The typical shard size can be up to 14 GB and storage needed for the entire set is roughly 1.3 TB. </p>
+    <p>The binary table data (i.e. the .parquet format files) can be read with tools such as <a href="https://github.com/apache/arrow">pyarrow</a> or <a href="https://pypi.org/project/fastparquet/">fastparquet</a> python libraries or read into dataframes.  Further, a user can load one or more .parquet shards of the full Y6 Gold data into a database such as <a href="https://duckdb.org/">'Duck DB'</a> and then perform SQL-style queries on the database to retrieve subsets of objects in the catalog which meet your desired search criteria.</p>
+
+
     <hr />
     <div style="text-align: center">
         <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_gold" target="_blank">
@@ -1246,16 +1249,61 @@
                 <td>Square root of the sky variance</td> 
             </tr>
             <tr>
-                <th colspan="3" style="text-align: center; background-color:Gray;">Mangle generated (healpix)</th>
+                <th colspan="3" style="text-align: center; background-color:Gray;">Mangle generated (healpix nside=4096)</th>
             </tr>
+            <tr>
+                <td>numimages</td>
+                <td>sum</td> 
+                <td>Number of images contributing to the coadd</td> 
+            </tr>
+            <tr>
+                <td>maglim</td>
+                <td></td> 
+                <td>Magnitdue limit estimated from the weight maps (10-sigma)</td> 
+            </tr>
+            <tr>
+                <td>fracdet</td>
+                <td></td> 
+                <td>Effective area fraction considering the bleed-trail and bright star masks</td> 
+            </tr>
+            <tr>
+                <td>exptime</td>
+                <td>sum</td> 
+                <td>Exposure time in coadds</td> 
+            </tr>
+            <tr>
+                <td>T_EFF</td>
+                <td>wmean/max/min</td> 
+                <td>Figure of merit for quality of observations (see <a href="https://ui.adsabs.harvard.edu/link_gateway/2018PASP..130g4501M/doi:10.1088/1538-3873/aab4ef">Morganson et al. (2018)</a>, Equation 4).  This is a ratio between exposure time and the exposure time necessary to achieve the same signal-to-noise for point sources observed in nominal conditions. This depends on a set of fiducial conditions per band for full-width half maximum, sky background and atmospheric transmission.</td> 
+            </tr>
+            <tr>
+                <td>T_EFF_EXPTIME</td>
+                <td>sum</td> 
+                <td>Exposure time multiplied by T_EFF (see above)</td> 
+            </tr>
+            <tr>
+                <td>MORE</td>
+                <td></td> 
+                <td>Other HPIX=4096 versions of decasu quantities</td> 
+            </tr>
+            <tr>
+                <td>CIRRUS_NEB</td>
+                <td>mean/max</td> 
+                <td>Relative probability of nebular emission contamination in the HPIX cell</td> 
+            </tr>
+            <tr>
+                <td>CIRRUS_SB</td>
+                <td>mean/max</td> 
+                <td>Surface brightness in image pixels (relative values)</td> 
+            </tr>
+            
         </tbody>
     </table>
-
-    <br />
+    <hr />
 
     <div style="text-align: center">
         <a style="padding: 20px; text-decoration: none" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_systematics" target="_blank">
-            <paper-button   raised  class="desButton">Y6 Systematics Maps</paper-button>
+            <paper-button   raised  class="desButton">Y6 Systematics Maps (not yet available)</paper-button>
         </a>
     </div>
 
