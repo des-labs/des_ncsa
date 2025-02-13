@@ -98,12 +98,12 @@
         </tr>
         <tr>
         <td colspan="1">
-            <p>SOMPZ Redshift Information</p>
+            <p>SOMPZ Redshift Information*</p>
           </td>
 
           <td colspan="1">
             <p>
-              <a href="http://{{drserverbaseurl}}/despublic/y3a2_files/y3kp_cats/DESY3_sompz_v0.40.h5">DESY3_sompz_v0.40.h5</a>
+              <a href="http://{{drserverbaseurl}}/despublic/y3a2_files/y3kp_cats/DESY3_sompz_v0.50.h5">DESY3_sompz_v0.50.h5</a>
             </p>
           </td>
         </tr>
@@ -112,11 +112,17 @@
     </table>
 
     <p> The full Gold catalog is also available by SQL table access, <a href="[[rootPath]]releases/y3a2/Y3gold">described here </a>. </p>
+    <p>*Note that this file was updated on 02/13/2025 to the correct version implemented in <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.505.4249M/abstract">Myles & Alarcon et al. 2021</a>. Previously v0.40 was linked, which places some galaxies in incorrect tomographic bins for their reported redshift distributions and very minorly impacts cosmology.</p>
 
     <h2>
       <strong>Catalog access</strong>
     </h2>
-    <p> The catalogs are all linked within the index file, so all data can be accessed by interacting within python using e.g. h5py from loading just the index file. All catalog files must be placed in the same directory for this to work. </p>
+    <p> The catalogs are all linked within the index file, so all data can be accessed by interacting within python using e.g. h5py from loading just the index file. All catalog files must be placed in the same directory for this to work. With the v0.50 SOMPZ catalog (*) one can re-link the updated h5 with the following python script:</p>
+	<pre>
+		with h5py.File('DESY3_indexcat.h5', 'r+') as f: 
+			del f['catalog/sompz'] #delete link to v0.40
+    			f['catalog/sompz'] = h5py.ExternalLink('DESY3_sompz_v0.50.h5', 'catalog/sompz')
+	</pre>
     <p> We provide (without support) a set of python classes to interact with the linked HDF5 catalog files that were used internally to DES. These classes also include code to calculate e.g. the shear response automatically. </p>
     <p> These can be installed from the main branch of <a href="https://github.com/des-science/DESY3Cats">https://github.com/des-science/DESY3Cats</a>, which includes basic documentation and examples. </p>
 
