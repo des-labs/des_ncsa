@@ -2,409 +2,456 @@
 
 <dom-module id="des-y3a2-key-cluster">
 
-<template>
+  <template>
 
-      <style include="shared-styles">
+    <style include="shared-styles">
+      .fixup {
+        margin-top: -4.5rem;
+      }
 
+      .fixdown {
+        margin-top: 5rem;
+      }
+    </style>
 
-</style>
+    <div id="kp_products_top"></div>
 
-<div class="fixup" id="kp_products_top"></div>
-
-<des-card heading="Y3KP Cluster Product">
-   <ul>
-        <li><a href="javascript:void(0)" on-tap="_kpoverview">Overview</a></li>
+    <des-card heading="Y3KP Cluster Products">
+      <div class="card-content">
+        <h2>
+          <strong>Content sections:</strong>
+        </h2>
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_kpoverview">Overview</a></li>
         </ul>
         <ul>
-      <li><a href="javascript:void(0)" on-tap="_catalog">Catalog</a></li>
-      </ul>
+          <li><a href="javascript:void(0)" on-tap="_datavectors">Data Vectors</a></li>
+        </ul>
         <ul>
-      <li><a href="javascript:void(0)" on-tap="_datavectors">Data Vectors</a></li>
-      </ul>
-      <ul>
-      <li><a href="javascript:void(0)" on-tap="_cosmochains">Cosmology Chains</a></li>
-      </ul>
+          <li><a href="javascript:void(0)" on-tap="_cosmochains">Cosmology Chains</a></li>
+        </ul>
+        <ul>
+          <li><a href="javascript:void(0)" on-tap="_catalog">Catalog</a></li>
+        </ul>
+      </div>
+      <div class="fixup" id="keyproducts_overview"></div>
+      <div class="fixdown card-content">
 
-<div id="keyproducts_overview"></div>
-<div class="card-content">
+        <h2>
+          <strong>Overview</strong>
+          &nbsp;<a style="font-size:0.8rem" href="javascript:void(0)" on-tap="_top"><iron-icon
+              icon="icons:arrow-upward"></iron-icon></a>
+        </h2>
+        <p>In <a href="https://arxiv.org/abs/xxxx.xxxx">DES Collaboration (2025)</a>
+          we present the first set of cosmological constraints derived with ~16,000 optically selected redMaPPer
+          clusters across nearly 5,000 deg^2 using DES Year 3 data sets. Our analysis leverages a consistent modeling
+          framework for galaxy cluster cosmology and DES-Y3 3x2pt, ensuring direct comparability with the DES-Y3 3x2pt
+          analysis. We obtain constraints of S8 = 0.864+0.035-0.035 and Ωm = 0.265+0.019-0.031 from the cluster-based
+          data vector. We find that cluster constraints and 3x2pt constraints are consistent under the ΛCDM model with a
+          PPD value of 0.53. The consistency between clusters and 3x2pt provides a stringent test of ΛCDM across
+          different mass and spatial scales. Jointly analyzing clusters with 3x2pt further improves cosmological
+          constraints, yielding S8 = 0.811+0.022-0.020 and Ωm= 0.294+0.022-0.033, a 24% improvement in the Ωm-S8
+          figure-of-merit over 3x2pt alone. Moreover, we find no significant deviation from the Planck CMB constraints
+          (PTE=0.6), significantly reducing previous S8 tension claims. Finally, combining DES 3x2pt, DES clusters, and
+          Planck CMB places an upper limit on the sum of neutrino masses of ∑mν &lt; 0.26 eV at 95% confidence under the
+          ΛCDM model. These results establish optically selected clusters as a key cosmological probe and pave the way
+          for cluster-based analyses in upcoming Stage-IV surveys such as LSST, Euclid, and Roman. </p>
+        <h2>
+          <strong>References</strong>
+        </h2>
+        <ol>
+          <li>
+            <a href="https://arxiv.org/abs/xxxx.xxxx">DES Collaboration 2025</a>, ArXiv e-prints xxxx.xxxx: main DES
+            cluster paper
+          </li>
+          <li>
+            <a href="https://arxiv.org/abs/xxxx.xxxx">To et al, 2025</a>, ArXiv e-prints xxxx: Method, Simulation
+            construction, and Validation
+          </li>
+        </ol>
+        <div class="fixup" id="kp_datavectors"></div>
+        <div class="fixdown">
+          <h2>
+            <strong>Data Vectors</strong>
+            &nbsp;<a style="font-size:0.8rem" href="javascript:void(0)" on-tap="_top"><iron-icon
+                icon="icons:arrow-upward"></iron-icon></a>
+          </h2>
+          <p> The data vectors will be <a
+              href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/y3kp_clusters/data">available for
+              download
+              here</a> when the paper is accepted.
+          </p>
 
-    <h2>
-      <strong>Overview</strong>
-    </h2>
-    <p>In <a href="https://arxiv.org/abs/xxxx.xxxx">DES Collaboration (2025)</a>
-    we present the first set of cosmological constraints derived with ~16,000 optically selected redMaPPer clusters across nearly 5,000 deg^2 using DES Year 3 data sets. Our analysis leverages a consistent modeling framework for galaxy cluster cosmology and DES-Y3 3x2pt, ensuring direct comparability with the DES-Y3 3x2pt analysis. We obtain constraints of S8 = 0.864+0.035-0.035 and Ωm = 0.265+0.019-0.031 from the cluster-based data vector. We find that cluster constraints and 3x2pt constraints are consistent under the ΛCDM model with a PPD value of 0.53. The consistency between clusters and 3x2pt provides a stringent test of ΛCDM across different mass and spatial scales. Jointly analyzing clusters with 3x2pt further improves cosmological constraints, yielding S8 = 0.811+0.022-0.020 and  Ωm= 0.294+0.022-0.033, a 24% improvement in the  Ωm-S8 figure-of-merit over 3x2pt alone.  Moreover, we find no significant deviation from the Planck CMB constraints (PTE=0.6), significantly reducing previous S8 tension claims. Finally, combining DES 3x2pt, DES clusters, and Planck CMB places an upper limit on the sum of neutrino masses of ∑mν &lt; 0.26 eV at 95% confidence under the ΛCDM model. These results establish optically selected clusters as a key cosmological probe and pave the way for cluster-based analyses in upcoming Stage-IV surveys such as LSST, Euclid, and Roman. </p>
-    <h2>
-    <strong>References</strong>
-   </h2>
-     <ol>
-    <li>
-      <a href="https://arxiv.org/abs/xxxx.xxxx">DES Collaboration 2025</a>, ArXiv e-prints xxxx.xxxx: main DES cluster paper</li>
-    <li>
-      <a href="https://arxiv.org/abs/xxxx.xxxx">To et al, 2025</a>, ArXiv e-prints xxxx: Method, Simulation construction, and Validation</li>
-  </ol>
+        </div>
 
-   <h2>
-   <div id="catalog"></div>
-   <strong>Catalog</strong>
-   </h2>
-   <p> The catalog can be found in <a href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/y3kp_clusters/Data/">here</a>. </p> 
-   <table class="wrapped">
-   <colgroup>
-     <col/>
-     <col/>
-     <col/>
-   </colgroup>
-   <tbody>
-     <tr>
-      <th colspan="3">
-   <p>redMaPPer v6.4.22+2 catalog</p>
-<xmp>y3_redmapper_v6.4.22+2_release.h5</xmp>
-</th>
-</tr>
-<tr>
-        <tr>
-          <td>
-            <strong>Column name</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
-          <td>
-            <strong>Number of columns</strong>
-          </td>
-        </tr>
+        <div class="fixup" id="kp_cosmochains"></div>
+        <div class="fixdown">
+          <h2>
+            <strong>Cosmology Chains</strong>
+            &nbsp;<a style="font-size:0.8rem" href="javascript:void(0)" on-tap="_top"><iron-icon
+                icon="icons:arrow-upward"></iron-icon></a>
+          </h2>
+          <p> The MCMC chains will be <a
+              href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/y3kp_clusters/chains">available for
+              download
+              here</a> when the paper is accepted.
+          </p>
+        </div>
 
-
-<td>index/redmapper/lgt20/select</td>
-<td>
-<p>index of the clusters in the catalog used for cosmological analyses</p>
-</td>
-<td>1</td>
-</tr>
-<td>index/redmapper/lgt20/random_select</td>
-<td>
-<p>index of the randoms in the catalog used for cosmological analyses</p>
-</td>
-<td>1</td>
-</tr>
-
-<tr>
-
-
-
-<tr>
-<th colspan="3">
-[Clusters] <xmp> /catalog/cluster           Group</xmp>
-          </th>
-        </tr>
-        <tr>
-          <td>
-            <strong>Column name</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
-          <td>
-            <strong>Number of columns</strong>
-          </td>
-        </tr>
-
-   <tr>
-<td>mem_match_id</td>
-<td>
-<p>unique id for each cluster</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>ra</td>
-<td>
-<p>Right Ascension (J2000.0) of the cluster  [Degrees]</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>dec</td>
-<td>
-<p>Declination (J2000.0) of the cluster  [Degrees]</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>lambda_chisq</td>
-<td>
-<p>cluster richness</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>lambda_chisq_e</td>
-<td>
-<p>cluster richness uncertainties</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>m200m</td>
-<td>
-<p>M_{200m} of clusters according to the best fit value of DES et al. (2025) [Msun/h]</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>z_lambda</td>
-<td>
-<p>photometric cluster redshift</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>z_lambda_e</td>
-<td>
-<p>uncertainties of photometric cluster redshift</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>bcg_spec_z</td>
-<td>
-<p>spectroscopic redshift of the central galaxy. -1 if no spectra is available</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>pcen</td>
-<td>
-<p>Probability of the most probable five central galaxies as the correct center.</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>id_cent</td>
-<td>
-<p>COADD_OBJECT_ID of five most probable centrals</p>
-</td>
-<td>5</td>
-</tr>
-<tr>
-<td>scaleval</td>
-<td>
-<p>the scale factor that converts raw sum of pmem to cluster richness (scaleval=1 if no part of the cluster is masked, and all galaxies are brighter than the limiting magnitude of the data)</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>maskfrac</td>
-<td>
-<p> fraction of the cluster that is masked</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>lambda(z)</td>
-<td>
-<p>Richness of the cluster assuming the cluster is living in a grid of redshift</p>
-</td>
-<td>170</td>
-</tr>
-<tr>
-<td>lambda(z)_xaxis</td>
-<td>
-<p>The grid of redshift of lambda(z)</p>
-</td>
-<td>170</td>
-</tr>
-<th colspan="3">
-[Member galaxies of clusters] <xmp> /catalog/cluster_members           Group</xmp>
-          </th>
-        </tr>
-        <tr>
-          <td>
-            <strong>Column name</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
-          <td>
-            <strong>Number of columns</strong>
-          </td>
-        </tr>
-   <tr>
-<td>mem_match_id</td>
-<td>
-<p>unique id the cluster</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>id</td>
-<td>
-<p>COADD_OBJECT_ID of the galaxy</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>ra</td>
-<td>
-<p>Right Ascension (J2000.0) of the galaxy  [Degrees]</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>dec</td>
-<td>
-<p>Declination (J2000.0) of the galaxy  [Degrees]</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>model_mag</td>
-<td>
-<p>SOF magnitude (griz)</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>model_magerr</td>
-<td>
-<p>SOF magnitude error (griz)</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>refmag</td>
-<td>
-<p>SOF magnitude (z)</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>refmagerr</td>
-<td>
-<p>SOF magnitude error (z)</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>pmem</td>
-<td>
-<p>membership probability</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>zred2</td>
-<td>
-<p>redshift of the galaxies according to the redsequence model</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>zred2_e</td>
-<td>
-<p>uncertainties of redshift of the galaxies according to the redsequence model</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>zspec</td>
-<td>
-<p>spectroscopic redshift of the galaxy. -1 if no spectra is available</p>
-</td>
-<td>1</td>
-</tr>
-
-<th colspan="3">
-[Randoms] <xmp> /randoms/           Group</xmp>
-          </th>
-        </tr>
-        <tr>
-          <td>
-            <strong>Column name</strong>
-          </td>
-          <td>
-            <strong>Description</strong>
-          </td>
-          <td>
-            <strong>Number of columns</strong>
-          </td>
-        </tr>
-
-   <tr>
-<td>avg_lambdaout</td>
-<td>
-<p>Measured richness of random point</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>lambda_in</td>
-<td>
-<p>Input richness of random point</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>ra</td>
-<td>
-<p>Right Ascension (J2000.0) of the random  [Degrees]</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>dec</td>
-<td>
-<p>Declination (J2000.0) of the random  [Degrees]</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>weight</td>
-<td>
-<p>weights of the random</p>
-</td>
-<td>1</td>
-</tr>
-<tr>
-<td>ztrue</td>
-<td>
-<p>redshift of the random</p>
-</td>
-<td>1</td>
-</tr>
-
-<th colspan="3">
-</th>
-</div>
- </table>
+        <div class="fixup" id="catalog"></div>
+        <div class="fixdown">
+          <h2>
+            <strong>Catalog</strong>
+            &nbsp;<a style="font-size:0.8rem" href="javascript:void(0)" on-tap="_top"><iron-icon
+                icon="icons:arrow-upward"></iron-icon></a>
+          </h2>
+          <p> The <a href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/y3kp_clusters/data/">catalog can
+              be downloaded here</a>.</p>
+        </div>
+        <table class="wrapped">
+          <colgroup>
+            <col />
+            <col />
+            <col />
+          </colgroup>
+          <tbody>
+            <tr>
+              <th colspan="3">
+                <p>redMaPPer v6.4.22+2 catalog</p>
+                <xmp>y3_redmapper_v6.4.22+2_release.h5</xmp>
+              </th>
+            </tr>
+            <tr>
+            <tr>
+              <td>
+                <strong>Column name</strong>
+              </td>
+              <td>
+                <strong>Description</strong>
+              </td>
+              <td>
+                <strong>Number of columns</strong>
+              </td>
+            </tr>
 
 
-   <h2>
-   <div id="kp_datavectors"></div>
-   <strong>Data Vectors</strong>
-   </h2>
-   <p> The data vector will be put <a href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/y3kp_clusters/Chain">here</a> when the paper is accepted. </p> 
+            <td>index/redmapper/lgt20/select</td>
+            <td>
+              <p>index of the clusters in the catalog used for cosmological analyses</p>
+            </td>
+            <td>1</td>
+            </tr>
+            <td>index/redmapper/lgt20/random_select</td>
+            <td>
+              <p>index of the randoms in the catalog used for cosmological analyses</p>
+            </td>
+            <td>1</td>
+            </tr>
 
-<h2>
-   <div id="kp_cosmochains"></div>
-   <strong>Cosmology Chains</strong>
-   </h2>
-   <p> The MCMC chain will be put <a href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/y3kp_clusters/Chain">here</a> when the paper is accepted. </p> 
+            <tr>
 
 
 
-</des-card>
-</template>
+            <tr>
+              <th colspan="3">
+                [Clusters] <xmp> /catalog/cluster Group</xmp>
+              </th>
+            </tr>
+            <tr>
+              <td>
+                <strong>Column name</strong>
+              </td>
+              <td>
+                <strong>Description</strong>
+              </td>
+              <td>
+                <strong>Number of columns</strong>
+              </td>
+            </tr>
 
-<script>
+            <tr>
+              <td>mem_match_id</td>
+              <td>
+                <p>unique id for each cluster</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>ra</td>
+              <td>
+                <p>Right Ascension (J2000.0) of the cluster [Degrees]</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>dec</td>
+              <td>
+                <p>Declination (J2000.0) of the cluster [Degrees]</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>lambda_chisq</td>
+              <td>
+                <p>cluster richness</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>lambda_chisq_e</td>
+              <td>
+                <p>cluster richness uncertainties</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>m200m</td>
+              <td>
+                <p>M_{200m} of clusters according to the best fit value of DES et al. (2025) [Msun/h]</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>z_lambda</td>
+              <td>
+                <p>photometric cluster redshift</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>z_lambda_e</td>
+              <td>
+                <p>uncertainties of photometric cluster redshift</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>bcg_spec_z</td>
+              <td>
+                <p>spectroscopic redshift of the central galaxy. -1 if no spectra is available</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>pcen</td>
+              <td>
+                <p>Probability of the most probable five central galaxies as the correct center.</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>id_cent</td>
+              <td>
+                <p>COADD_OBJECT_ID of five most probable centrals</p>
+              </td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>scaleval</td>
+              <td>
+                <p>the scale factor that converts raw sum of pmem to cluster richness (scaleval=1 if no part of the
+                  cluster is masked, and all galaxies are brighter than the limiting magnitude of the data)</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>maskfrac</td>
+              <td>
+                <p> fraction of the cluster that is masked</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>lambda(z)</td>
+              <td>
+                <p>Richness of the cluster assuming the cluster is living in a grid of redshift</p>
+              </td>
+              <td>170</td>
+            </tr>
+            <tr>
+              <td>lambda(z)_xaxis</td>
+              <td>
+                <p>The grid of redshift of lambda(z)</p>
+              </td>
+              <td>170</td>
+            </tr>
+            <th colspan="3">
+              [Member galaxies of clusters] <xmp> /catalog/cluster_members Group</xmp>
+            </th>
+            </tr>
+            <tr>
+              <td>
+                <strong>Column name</strong>
+              </td>
+              <td>
+                <strong>Description</strong>
+              </td>
+              <td>
+                <strong>Number of columns</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>mem_match_id</td>
+              <td>
+                <p>unique id the cluster</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>id</td>
+              <td>
+                <p>COADD_OBJECT_ID of the galaxy</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>ra</td>
+              <td>
+                <p>Right Ascension (J2000.0) of the galaxy [Degrees]</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>dec</td>
+              <td>
+                <p>Declination (J2000.0) of the galaxy [Degrees]</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>model_mag</td>
+              <td>
+                <p>SOF magnitude (griz)</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>model_magerr</td>
+              <td>
+                <p>SOF magnitude error (griz)</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>refmag</td>
+              <td>
+                <p>SOF magnitude (z)</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>refmagerr</td>
+              <td>
+                <p>SOF magnitude error (z)</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>pmem</td>
+              <td>
+                <p>membership probability</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>zred2</td>
+              <td>
+                <p>redshift of the galaxies according to the redsequence model</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>zred2_e</td>
+              <td>
+                <p>uncertainties of redshift of the galaxies according to the redsequence model</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>zspec</td>
+              <td>
+                <p>spectroscopic redshift of the galaxy. -1 if no spectra is available</p>
+              </td>
+              <td>1</td>
+            </tr>
+
+            <th colspan="3">
+              [Randoms] <xmp> /randoms/ Group</xmp>
+            </th>
+            </tr>
+            <tr>
+              <td>
+                <strong>Column name</strong>
+              </td>
+              <td>
+                <strong>Description</strong>
+              </td>
+              <td>
+                <strong>Number of columns</strong>
+              </td>
+            </tr>
+
+            <tr>
+              <td>avg_lambdaout</td>
+              <td>
+                <p>Measured richness of random point</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>lambda_in</td>
+              <td>
+                <p>Input richness of random point</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>ra</td>
+              <td>
+                <p>Right Ascension (J2000.0) of the random [Degrees]</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>dec</td>
+              <td>
+                <p>Declination (J2000.0) of the random [Degrees]</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>weight</td>
+              <td>
+                <p>weights of the random</p>
+              </td>
+              <td>1</td>
+            </tr>
+            <tr>
+              <td>ztrue</td>
+              <td>
+                <p>redshift of the random</p>
+              </td>
+              <td>1</td>
+            </tr>
+
+            <th colspan="3">
+            </th>
+      </div>
+      </table>
+
+
+    </des-card>
+  </template>
+
+  <script>
 
     class DesY3A2KeyClusterCatalogs extends Polymer.Element {
       static get is() { return 'des-y3a2-key-cluster'; }
-       _top() {this.$.kp_products_top.scrollIntoView();}
-            _kpoverview() {this.$.keyproducts_overview.scrollIntoView();}
-            _catalog() {this.$.catalog.scrollIntoView();}
-            _datavectors() {this.$.kp_datavectors.scrollIntoView();}
-            _cosmochains() {this.$.kp_cosmochains.scrollIntoView();}
+      _top() { this.$.kp_products_top.scrollIntoView(); }
+      _kpoverview() { this.$.keyproducts_overview.scrollIntoView(); }
+      _catalog() { this.$.catalog.scrollIntoView(); }
+      _datavectors() { this.$.kp_datavectors.scrollIntoView(); }
+      _cosmochains() { this.$.kp_cosmochains.scrollIntoView(); }
 
     }
     window.customElements.define(DesY3A2KeyClusterCatalogs.is, DesY3A2KeyClusterCatalogs);
