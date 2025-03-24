@@ -37,9 +37,9 @@ jobs:
         name: Login to container registry
         uses: docker/login-action@v3
         with:
-          registry: "hub.ncsa.illinois.edu"
-          username: "${{ secrets.NCSA_HARBOR_DES_PUBLIC_USERNAME }}"
-          password: "${{ secrets.NCSA_HARBOR_DES_PUBLIC_TOKEN }}"
+          registry: "registry.gitlab.com"
+          username: "${{ secrets.GITLAB_REGISTRY_USERNAME }}"
+          password: "${{ secrets.GITLAB_REGISTRY_TOKEN }}"
       -
         name: Build and push
         id: docker_build
@@ -47,7 +47,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: hub.ncsa.illinois.edu/des-public/desdm-public:latest
+          tags: registry.gitlab.com/des-labs/compose-deployment/desdm-public:latest
           # From https://github.com/docker/build-push-action/blob/main/docs/advanced/cache.md#github-cache
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
