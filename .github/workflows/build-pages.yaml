@@ -48,9 +48,9 @@ jobs:
           context: .
           push: false
           tags: registry.gitlab.com/des-labs/compose-deployment/desdm-public:pages
-          # From https://github.com/docker/build-push-action/blob/master/docs/advanced/cache.md#github-cache
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new
+          # # From https://github.com/docker/build-push-action/blob/master/docs/advanced/cache.md#github-cache
+          # cache-from: type=local,src=/tmp/.buildx-cache
+          # cache-to: type=local,dest=/tmp/.buildx-cache-new
       # -
       #   # Temp fix
       #   # https://github.com/docker/build-push-action/issues/252
@@ -71,7 +71,7 @@ jobs:
           path: /srv/jekyll/.
       - 
         name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ steps.extract.outputs.destination }}
           name: github-pages
