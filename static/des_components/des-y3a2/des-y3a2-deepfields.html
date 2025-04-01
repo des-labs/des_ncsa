@@ -36,7 +36,7 @@
 
 
 
-<p>The DES Deep Fields comprise the set of fields where the integrated exposure time per pixel in the four key DECam passbands (griz) is approximately ten times that of the main DES survey area or greater. For the DES Y3 cosmology analysis we built images in the ten supernova (SN) fields and the COSMOS field, combining DES exposures and community data. Names of the SN pointings are derived from the respective pre-cursor surveys in that region of the sky, CDFS (SN-C1, SN-C2, SN-C3), Elais-South (SN-E1, SN-E2), Stripe 82 (SN-S1, SN-S2) and XMM-LSS (SN-X1, SN-X2, SN-X3). The sky locations and footprints of the eleven fields are shown in the figure below. Filled rectangles correspond to the DECam chips that are used to produce our photometric catalogue.</p>
+<p>The DES Deep Fields comprise the set of fields where the integrated exposure time per pixel in the four key DECam passbands (griz) is approximately ten times that of the main DES survey area or greater. For the DES Y3 cosmology analysis we built images in the ten supernova (SN) fields and the COSMOS field, combining DES exposures and community data. Names of the SN pointings are derived from the respective pre-cursor surveys in that region of the sky, CDFS (SN-C1, SN-C2, SN-C3), Elais-South (SN-E1, SN-E2), Stripe 82 (SN-S1, SN-S2) and XMM-LSS (SN-X1, SN-X2, SN-X3). The sky locations and footprints of the eleven fields are shown in the figure below. Filled rectangles correspond to the DECam chips that are used to produce our photometric catalog.</p>
 
 <img src="{{rootPath}}static/images/y3a2/deep_fig1.png" width=1200 height=800>
 
@@ -61,14 +61,14 @@
   <li> Chips 02 (in most cases) and 62 are missing.</li>
 </ul>
 
-<p>For the DES Y3 cosmology analysis we chose those fields that had data available both from DECam (ugriz bands) and from public VISTA VIRCam imaging (JHKs) at the time of data assembly. The result is an 8-band photometric catalogue covering 5.88 sq. deg., after masking. This catalogue is based on the COADD_TRUTH depth level of images and enables the computation of photometric redshifts and a star-galaxy classification - see <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> for details.</p>
+<p>For the DES Y3 cosmology analysis we chose those fields that had data available both from DECam (ugriz bands) and from public VISTA VIRCam imaging (JHKs) at the time of data assembly. The result is an 8-band photometric catalog covering 5.88 sq. deg., after masking. This catalog is based on the COADD_TRUTH depth level of images and enables the computation of photometric redshifts and a star-galaxy classification - see <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.tmp.2835H/abstract"> Hartley & Choi et al. (2021)</a> for details.</p>
 
 <p>The contents of this release are as follows:</p>
 <ul>
   <li>Coadded science images, pixel masks and weight maps at three depth levels (SN fields), or single depth level (COSMOS).</li>
-  <li>8-band photometric catalogue covering 5.88 sq. deg..</li>
+  <li>8-band photometric catalog covering 5.88 sq. deg..</li>
   <li>kNN-based star-galaxy classifications.</li>
-  <li>Photometric redshift catalogues from EAzY and DNF.</li>
+  <li>Photometric redshift catalogs from EAzY and DNF.</li>
 </ul>
 
 <div id="deep_images"></div>
@@ -106,9 +106,9 @@ Image files are compressed with fpack and one file is provided for each coadded 
 
 </br>
 <div id="deep_catalog"></div>
-<h2><strong> Key Project Catalogue</strong> <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h2>
+<h2><strong> Key Project Catalog</strong> <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h2>
 
-<p>The key project catalogue drawn from SN-C3, SN-X3, SN-E2 and COSMOS is available as a database table, Y3_DEEP_FIELDS_PHOTOM, via <a href="https://des.ncsa.illinois.edu/desaccess/" target="_blank">the DB server</a>.</p>
+<p>The key project catalog drawn from SN-C3, SN-X3, SN-E2 and COSMOS is <a href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/deepfields/Y3_DEEP_FIELDS_PHOTOM/" target="_blank">available for download here (Y3_DEEP_FIELDS_PHOTOM)</a>.</p>
 
 <!--p>HERE, AND BELOW, COULD DO WITH AN EXAMPLE QUERY TO GRAB A SORT OF "STANDARD" PRODUCT.</P-->
 
@@ -274,7 +274,17 @@ Image files are compressed with fpack and one file is provided for each coadded 
 <div id="deep_photoz"></div>
 <h2><strong>Photometric redshifts</strong> <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></h2>
 
-<p>Photometric redshifts for the key project catalogue have been computed using the EAzY (<a href="http://adsabs.harvard.edu/abs/2008ApJ...686.1503B">Brammer, van Dokkum & Coppi, 2008</a>) template-ftting software and DNF (<a href="http://adsabs.harvard.edu/abs/2016MNRAS.459.3078D">De Vicente, Sanchez & Sevilla-Noarbe, 2016)</a> machine learning algorithm. They are available as separate database tables,  Y3_DEEP_FIELDS_PHOTOZ for EAZY and Y3_DEEP_FIELDS_PHOTOZ_DNF for DNF, via <a href="https://des.ncsa.illinois.edu/desaccess/" target="_blank">the DB server</a>.</p>
+<p>Photometric redshifts for the key project catalog have been computed using the EAzY (<a href="http://adsabs.harvard.edu/abs/2008ApJ...686.1503B">Brammer, van Dokkum & Coppi, 2008</a>) template-fitting software and DNF (<a href="http://adsabs.harvard.edu/abs/2016MNRAS.459.3078D">De Vicente, Sanchez & Sevilla-Noarbe, 2016)</a> machine learning algorithm. They are available for download as separate datasets:
+
+<list>
+  <li>
+    <a href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/deepfields/Y3_DEEP_FIELDS_PHOTOZ/" target="_blank">Y3_DEEP_FIELDS_PHOTOZ for EAZY</a>
+  </li>
+  <li>
+    <a href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/deepfields/Y3_DEEP_FIELDS_PHOTOZ_DNF/" target="_blank">Y3_DEEP_FIELDS_PHOTOZ_DNF for DNF</a>
+  </li>
+</list>
+</p>
 
 <p> Contact:</p>
 <ol>
@@ -409,7 +419,7 @@ Image files are compressed with fpack and one file is provided for each coadded 
         <div id="deep_queries"></div>
         <strong>Example queries <a style="font-size:0.72rem" href="javascript:void(0)" on-tap="_top">(Top)</a></strong>
       </h2>
-      <strong>Get a basic flux catalogue with star/galaxy classes</strong>
+      <strong>Get a basic flux catalog with star/galaxy classes</strong>
       <code>
         <p>SELECT </p>
         <p>ID, RA, DEC, TILENAME, BDF_FLUX_DERED_CALIB_U as flux_u, BDF_FLUX_DERED_CALIB_G as flux_g, BDF_FLUX_DERED_CALIB_R as flux_r, BDF_FLUX_DERED_CALIB_I as flux_i, BDF_FLUX_DERED_CALIB_Z as flux_z, BDF_FLUX_DERED_CALIB_J as flux_J, BDF_FLUX_DERED_CALIB_H as flux_H, BDF_FLUX_DERED_CALIB_KS as flux_Ks, BDF_FLUX_ERR_DERED_CALIB_U as fluxerr_u, BDF_FLUX_ERR_DERED_CALIB_G as fluxerr_g, BDF_FLUX_ERR_DERED_CALIB_R as fluxerr_r, BDF_FLUX_ERR_DERED_CALIB_I as fluxerr_i, BDF_FLUX_ERR_DERED_CALIB_Z as fluxerr_z, BDF_FLUX_ERR_DERED_CALIB_J as fluxerr_J, BDF_FLUX_ERR_DERED_CALIB_H as fluxerr_H, BDF_FLUX_ERR_DERED_CALIB_KS as fluxerr_Ks, KNN_CLASS
