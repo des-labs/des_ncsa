@@ -16,7 +16,7 @@ Workflow for contributing content updates
     git checkout -b dev-$RELEASE_NAME
     ```
     
-3. Build the Docker image.
+3. Build the Docker image like so:
     ```shell
     docker build . -t desdm-public --platform linux/x86_64
     ```
@@ -37,4 +37,4 @@ Workflow for contributing content updates
     git commit -m 'Updated release page blah'
     git push origin dev-$RELEASE_NAME
     ```
-8. Create a pull request to merge and publish your changes. You must [inform the DES Science Release community via the #sci-release Slack channel](https://darkenergysurvey.slack.com/archives/C0PMTCWRL) to allow for a peer review of the submission before it can be accepted. 
+8. Create a pull request to merge and publish your changes. You must [inform the DES Science Release community via the #sci-release Slack channel](https://darkenergysurvey.slack.com/archives/C0PMTCWRL) to allow for a peer review of the submission before it can be accepted.
