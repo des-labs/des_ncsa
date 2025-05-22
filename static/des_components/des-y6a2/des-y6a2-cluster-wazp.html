@@ -1,0 +1,142 @@
+<dom-module id="des-y6a2-cluster-wazp">
+
+  <template>
+
+    <style include="shared-styles">
+      .fixup {
+        margin-top: -4.5rem;
+      }
+
+      .fixdown {
+        margin-top: 5rem;
+      }
+    </style>
+
+    <des-card heading="Y6 WaZP Cluster Catalog">
+
+        <h2 class="wp-block-heading">Overview</h2>
+        <p>
+            In <a href="https://arxiv.org/abs/xxx">Benoist et al (2025)</a>, We present and characterize the galaxy
+            cluster catalog detected by the WaZP cluster finder, which is not based on red- sequence identification, on
+            the full six years of observations of the Dark Energy Survey (DES-Y6). The full catalog contains over 400k
+            detected clusters with richnesses, Ngals, above 5 and that reach redshifts up to z = 1.3. We also provide a
+            version of the catalog where the observation depth and richness computation are homogenized to be used for
+            cosmology, containing 33k rich (Ngals &gt; 25) clusters.  We compare our results with the previous WaZP
+            catalog obtained from the DES first-year data release (DES-Y1).  We find that essentially all clusters
+            within the common footprint and depth limit are recovered.  The deeper observations on DES-Y6 and the more
+            complete available spectroscopic redshift sample lead to improvements in the redshifts of the clusters,
+            resulting in an average scatter of 1.4% and offset of 0.2%.  The optical clusters are also cross-matched
+            with Sunyaev Zel’dovich Effect (SZE) cluster samples detected by the South Pole Telescope (SPT) and the
+            Atacama Cosmology Telescope (ACT). We find that essentially all SZE clusters with reasonable overlapping
+            footprint have a corresponding WaZP cluster.  Conversely, 90% of the optical detections with richness
+            greater than 150 have a counterpart in the deeper regions of the SZE surveys. Based on cross-match with the
+            SZE catalogs, we also find that 15-20% of the SZE matched systems have more than one possible WaZP
+            counterpart at the same redshift and within the SZE R500c, indicating possible interacting or unrelaxed
+            systems.  Finally, given the optical and SZE beams, WaZP and SZE centerings are found to be consistent. 
+        </p>
+
+        <h2 class="wp-block-heading">Catalogs description</h2>
+        <div class="fixup" id="catalog"></div>
+        <div class="fixdown">
+            <table>
+                <tr><th colspan=2>Cluster Catalog</th></tr>
+                <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
+                <tr><td>NAME</td><td>Cluster</span> name in the format WAZP DESY1 JHHMM.m+DDMM</td></tr>
+                <tr><td>RA</td><td>in deg</td></tr>
+                <tr><td>DEC</td><td>in deg</td></tr>
+                <tr><td>zp_bright</td><td>final cluster redshift</td></tr>
+                <tr><td>SNR</td><td>Signal to Noise Ratio</td></tr>
+                <tr><td>NGALS</td><td>Richness, sum of Pmem&rsquo;s down to m*+1.5 and within RADIUS_MPC</td></tr>
+                <tr><td>E_NGALS</td><td>error on NGALS</td></tr>
+                <tr><td>NGALS_R300</td><td>Richness, sum of Pmem&rsquo;s down to m*+1.5 and within 0.3 Mpc</td></tr>
+                <tr><td>E_NGALS_R300</td><td>error on NGALS_R300</td></tr>
+                <tr><td>NGALS_R500</td><td>Richness, sum of Pmem&rsquo;s down to m*+1.5 and within 0.5 Mpc</td></tr>
+                <tr><td>E_NGALS_R500</td><td>error on NGALS_R500</td></tr>
+                <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
+                <tr><td>RADIUS_MPC</td><td>radius in Mpc</td></tr>
+                <tr><td>RADIUS_AMIN</td><td>same as RADIUS_MPC in arcmin at cluster redshift</td></tr>
+                <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
+                <tr><td>MASKED_FRAC_1MPC</td><td>masked fraction with a 1.0 Mpc radius disk centered on cluster</td></tr>
+                <tr><td>MASKED_FRAC_05MPC</td><td>masked fraction with a 0.5 Mpc radius disk centered on cluster</td></tr>
+                <tr><td>MASKED_FRAC_03MPC</td><td>masked fraction with a 0.3 Mpc radius disk centered on cluster</td></tr>
+                <tr><td>LOCAL_NBKG</td><td>local bkg in gal. counts at the cluster redshift (per Mpc2)</td></tr>
+                <tr><td>GLOBAL_NBKG</td><td>global bkg in gal. counts at the cluster redshift (per Mpc2)</td></tr>
+                <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
+                <tr><td>RA_BCG</td><td>RA of the BCG (deg)</td></tr>
+                <tr><td>DEC_BCG</td><td>DEC of the BCG (deg)</td></tr>
+                <tr><td>MSTAR_CL</td><td>mag_star at the cluster redshift zp</td></tr>
+                <tr><td>DMAG_BCG</td><td>m_BCG &ndash; m* within Radius_max of the cluster</td></tr>
+                <tr><td>DIST_BCG</td><td>distance of the BCG to the cluster center (Mpc)</td></tr>
+                <tr><td>NMEM</td><td>number of members (Pmem&gt;0)</td></tr>
+                <tr><td>ZMAX</td><td>Maximum redshift for complete richness at the cluster location</td></tr>
+                <tr><td>WCOVER_FRAC_1MPC</td><td>Weighted area fraction covered with a 1.0 Mpc radius disk centered on cluster</td></tr>
+            </table>
+
+            <table><tbody>
+                <tr><th colspan=2>Members Catalog</th></tr>
+                <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
+                <tr><td>ID_g</td><td>ID of the galaxy</td></tr>
+                <tr><td>NAME_CLUSTER</td><td>NAME of the corresponding cluster</td></tr>
+                <tr><td>RA</td><td>RA of the galaxy (deg)</td></tr>
+                <tr><td>DEC</td><td>DEC f the galaxy (deg)</td></tr>
+                <tr><td>ZP</td><td>photometric redshift of the galaxy</td></tr>
+                <tr><td>NMEM_CL</td><td>number of members in the cluster</td></tr>
+                <tr><td>PMEM</td><td>membership probability</td></tr>
+                <tr><td>MAG</td><td>reference magnitude band</td></tr>
+                <tr><td>RA_CL</td><td>RA of host cluster (deg)</td></tr>
+                <tr><td>DEC_CL</td><td>DEC of host cluster (deg)</td></tr>
+                <tr><td>ZP_CL</td><td>redshift of host cluster</td></tr>
+                <tr><td>MSTAR_CL</td><td>mstar in the ref band at the cluster redshift</td></tr>
+                <tr><td>mag_bcg</td><td>magnitude of the BCG</td></tr>
+                <tr><td>FLAG</span>_BCG</td><td>=1 for the BCG</td></tr>
+                <tr><td>DCEN</td><td>distance in Mpc of the BCG</td></tr>
+                <tr><td>DCEN_NORM</td><td>DCEN/RADIUS_MPC</td></tr>
+                <tr><td>SNR</td><td>SNR of host cluster</td></tr>
+                <tr><td>NGALS</td><td>Richness of host cluster</td></tr>
+                <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
+                <tr><td>mag_g</td><td>Magnitude in g band</td></tr>
+                <tr><td>mag_r</td><td>Magnitude in r band</td></tr>
+                <tr><td>mag_i</td><td>Magnitude in i band</td></tr>
+                <tr><td>mag_z</td><td>Magnitude in z band</td></tr>
+                <tr><td>mag_y</td><td>Magnitude in y band</td></tr></tbody>
+            </table>
+
+            <table>
+                <tr><th colspan=2>Zmax mask</th><td>
+                <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
+                <tr><td>pixel</td><td>NSIDE=4096 pixel with RING ordering</td></tr>
+                <tr><td>zmax</td><td>Maximum redshift for clusters with complete richness</td></tr>
+            </table>
+        </div>
+
+<!--
+-->
+
+    </des-card>
+  </template>
+
+  <!--script>
+
+    class DesY3A2KeyClusterCatalogs extends Polymer.Element {
+      static get is() { return 'des-y3a2-key-cluster'; }
+      _top() { this.$.kp_products_top.scrollIntoView(); }
+      _kpoverview() { this.$.keyproducts_overview.scrollIntoView(); }
+      _catalog() { this.$.catalog.scrollIntoView(); }
+      _datavectors() { this.$.kp_datavectors.scrollIntoView(); }
+      _cosmochains() { this.$.kp_cosmochains.scrollIntoView(); }
+
+    }
+    window.customElements.define(DesY3A2KeyClusterCatalogs.is, DesY3A2KeyClusterCatalogs);
+
+
+  </script-->
+
+  <script>
+    class DesY6A2ClWazp extends Polymer.Element {
+      static get is() { return 'des-y6a2-cluster-wazp'; }
+      _top() { this.$.y6_cl_wazp_top.scrollIntoView(); }
+    }
+    window.customElements.define(DesY6A2ClWazp.is, DesY6A2ClWazp);
+  </script>
+
+</dom-module>
