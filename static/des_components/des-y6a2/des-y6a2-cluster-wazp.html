@@ -23,6 +23,7 @@
             <li><a href="_footprint_zmax.fits">Zmax Map</a></li>
         </ul>
 
+        * To get cosmology cluster catalog, filter it with ZPHOT &lt; ZMAX.
 
         <h2 class="wp-block-heading">Overview</h2>
         <p>
@@ -51,70 +52,58 @@
             <table>
                 <tr><th colspan=2>Cluster Catalog</th></tr>
                 <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
-                <tr><td>NAME</td><td>Cluster</span> name in the format WAZP DESY1 JHHMM.m+DDMM</td></tr>
+                <tr><td>NAME</td><td>Cluster</span> name in the format WAZP DESY6 JHHMM.m+DDMM</td></tr>
+                <tr><td>ID</td><td>Cluster ranked by richness, linked to members catalog</td></tr>
                 <tr><td>RA</td><td>in deg</td></tr>
                 <tr><td>DEC</td><td>in deg</td></tr>
-                <tr><td>zp_bright</td><td>final cluster redshift</td></tr>
+                <tr><td>ZPHOT</td><td>Cluster photometric redshift</td></tr>
+                <tr><td>ZSPEC</td><td>Cluster spectroscopic redshift, when available</td></tr>
+                <tr><td>ZSPEC_UNC</td><td>Uncertainty on cluster spectroscopic redshift</td></tr>
+                <tr><td>ZSPEC_TYPE</td><td>Type of cluster spectroscopic redshift</td></tr>
                 <tr><td>SNR</td><td>Signal to Noise Ratio</td></tr>
                 <tr><td>NGALS</td><td>Richness, sum of Pmem&rsquo;s down to m*+1.5 and within RADIUS_MPC</td></tr>
-                <tr><td>E_NGALS</td><td>error on NGALS</td></tr>
-                <tr><td>NGALS_R300</td><td>Richness, sum of Pmem&rsquo;s down to m*+1.5 and within 0.3 Mpc</td></tr>
-                <tr><td>E_NGALS_R300</td><td>error on NGALS_R300</td></tr>
-                <tr><td>NGALS_R500</td><td>Richness, sum of Pmem&rsquo;s down to m*+1.5 and within 0.5 Mpc</td></tr>
-                <tr><td>E_NGALS_R500</td><td>error on NGALS_R500</td></tr>
+                <tr><td>NGALS_UNC</td><td>Uncertainty on NGALS</td></tr>
                 <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
                 <tr><td>RADIUS_MPC</td><td>radius in Mpc</td></tr>
                 <tr><td>RADIUS_AMIN</td><td>same as RADIUS_MPC in arcmin at cluster redshift</td></tr>
                 <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
-                <tr><td>MASKED_FRAC_1MPC</td><td>masked fraction with a 1.0 Mpc radius disk centered on cluster</td></tr>
-                <tr><td>MASKED_FRAC_05MPC</td><td>masked fraction with a 0.5 Mpc radius disk centered on cluster</td></tr>
-                <tr><td>MASKED_FRAC_03MPC</td><td>masked fraction with a 0.3 Mpc radius disk centered on cluster</td></tr>
-                <tr><td>LOCAL_NBKG</td><td>local bkg in gal. counts at the cluster redshift (per Mpc2)</td></tr>
-                <tr><td>GLOBAL_NBKG</td><td>global bkg in gal. counts at the cluster redshift (per Mpc2)</td></tr>
+                <tr><td>COVER_FRAC_1MPC</td><td>Area fraction covered with a 1.0 Mpc radius disk centered on cluster</td></tr>
+                <tr><td>COVER_FRAC_1MPC_WEIGHTED</td><td>Area fraction covered with a 1.0 Mpc radius disk centered on
+                cluster weighted with a 2D NFW profile</td></tr>
                 <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
-                <tr><td>RA_BCG</td><td>RA of the BCG (deg)</td></tr>
-                <tr><td>DEC_BCG</td><td>DEC of the BCG (deg)</td></tr>
-                <tr><td>MSTAR_CL</td><td>mag_star at the cluster redshift zp</td></tr>
-                <tr><td>DMAG_BCG</td><td>m_BCG &ndash; m* within Radius_max of the cluster</td></tr>
-                <tr><td>DIST_BCG</td><td>distance of the BCG to the cluster center (Mpc)</td></tr>
-                <tr><td>NMEM</td><td>number of members (Pmem&gt;0)</td></tr>
+                <tr><td>ID_CG</td><td>ID of the central galaxy, when available</td></tr>
+                <tr><td>RA_CG</td><td>RA of the CG (deg)</td></tr>
+                <tr><td>DEC_CG</td><td>DEC of the CG (deg)</td></tr>
                 <tr><td>ZMAX</td><td>Maximum redshift for complete richness at the cluster location</td></tr>
-                <tr><td>WCOVER_FRAC_1MPC</td><td>Weighted area fraction covered with a 1.0 Mpc radius disk centered on cluster</td></tr>
+                <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
+                <tr><td>SZE_SPT_ID</td><td>ID of SPT detection, when available (only for main detection)</td></tr>
+                <tr><td>SZE_SPT_SOURCE</td><td>Name of SPT catalog</td></tr>
+                <tr><td>SZE_SPT_ID_SECONDARY</td><td>ID of SPT detection, when available (secondary)</td></tr>
+                <tr><td>SZE_ACT_ID</td><td>ID of ACT detection, when available</td></tr>
+                <tr><td>SZE_ACT_ID_SECONDARY</td><td>ID of ACT detection, when available (secondary)</td></tr>
             </table>
 
             <table><tbody>
                 <tr><th colspan=2>Members Catalog</th></tr>
                 <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
-                <tr><td>ID_g</td><td>ID of the galaxy</td></tr>
-                <tr><td>NAME_CLUSTER</td><td>NAME of the corresponding cluster</td></tr>
+                <tr><td>ID</td><td>ID of the galaxy</td></tr>
+                <tr><td>ID_CLUSTER</td><td>ID of the host cluster</td></tr>
                 <tr><td>RA</td><td>RA of the galaxy (deg)</td></tr>
-                <tr><td>DEC</td><td>DEC f the galaxy (deg)</td></tr>
-                <tr><td>ZP</td><td>photometric redshift of the galaxy</td></tr>
-                <tr><td>NMEM_CL</td><td>number of members in the cluster</td></tr>
+                <tr><td>DEC</td><td>DEC of the galaxy (deg)</td></tr>
+                <tr><td>ZPHOT</td><td>photometric redshift of the galaxy</td></tr>
+                <tr><td>ZSPEC</td><td>Galaxy spectroscopic redshift, when available</td></tr>
+                <tr><td>ZSPEC_SOURCE</td><td>Origin of spectroscopic redshift, 1-xx, 2-xx, 3-xx</td></tr>
                 <tr><td>PMEM</td><td>membership probability</td></tr>
-                <tr><td>MAG</td><td>reference magnitude band</td></tr>
-                <tr><td>RA_CL</td><td>RA of host cluster (deg)</td></tr>
-                <tr><td>DEC_CL</td><td>DEC of host cluster (deg)</td></tr>
-                <tr><td>ZP_CL</td><td>redshift of host cluster</td></tr>
-                <tr><td>MSTAR_CL</td><td>mstar in the ref band at the cluster redshift</td></tr>
-                <tr><td>mag_bcg</td><td>magnitude of the BCG</td></tr>
-                <tr><td>FLAG</span>_BCG</td><td>=1 for the BCG</td></tr>
-                <tr><td>DCEN</td><td>distance in Mpc of the BCG</td></tr>
-                <tr><td>DCEN_NORM</td><td>DCEN/RADIUS_MPC</td></tr>
-                <tr><td>SNR</td><td>SNR of host cluster</td></tr>
-                <tr><td>NGALS</td><td>Richness of host cluster</td></tr>
-                <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
-                <tr><td>mag_g</td><td>Magnitude in g band</td></tr>
-                <tr><td>mag_r</td><td>Magnitude in r band</td></tr>
-                <tr><td>mag_i</td><td>Magnitude in i band</td></tr>
-                <tr><td>mag_z</td><td>Magnitude in z band</td></tr>
-                <tr><td>mag_y</td><td>Magnitude in y band</td></tr></tbody>
+                <tr><td>MAG</td><td>magnitude in the z band</td></tr>
+                <tr><td>FLAG</span>_CG</td><td>=1 for the central galaxy</td></tr>
+                </tbody>
             </table>
 
             <table>
-                <tr><th colspan=2>Zmax mask</th><td>
+                <tr><th colspan=2>Footprint with local Zmax</th><td>
                 <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
-                <tr><td>pixel</td><td>NSIDE=4096 pixel with RING ordering</td></tr>
+                <tr><td>pixel</td><td>NSIDE=4096 pixel with NEST ordering</td></tr>
+                <tr><td>detfrac</td><td>Fraction of the pixel covered</td></tr>
                 <tr><td>zmax</td><td>Maximum redshift for clusters with complete richness</td></tr>
             </table>
         </div>
