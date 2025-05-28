@@ -54,8 +54,8 @@
                 <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
                 <tr><td>NAME</td><td>Cluster</span> name in the format WAZP DESY6 JHHMM.m+DDMM</td></tr>
                 <tr><td>ID</td><td>Cluster ranked by SNR, linked to members catalog</td></tr>
-                <tr><td>RA</td><td>in deg</td></tr>
-                <tr><td>DEC</td><td>in deg</td></tr>
+                <tr><td>RA</td><td>Right Ascension in degress</td></tr>
+                <tr><td>DEC</td><td>Declination in degrees</td></tr>
                 <tr><td>ZPHOT</td><td>Cluster photometric redshift</td></tr>
                 <tr><td>ZSPEC</td><td>Cluster spectroscopic redshift, when available</td></tr>
                 <tr><td>ZSPEC_UNC</td><td>Uncertainty on cluster spectroscopic redshift</td></tr>
@@ -71,16 +71,17 @@
                 <tr><td>COVER_FRAC_1MPC_WEIGHTED</td><td>Area fraction covered with a 1.0 Mpc radius disk centered on
                 cluster weighted with a 2D NFW profile</td></tr>
                 <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
-                <tr><td>ID_CG</td><td>ID of the central galaxy, when available</td></tr>
+                <tr><td>ID_CG</td><td>ID of the central galaxy (-1 when unavailable)</td></tr>
                 <tr><td>RA_CG</td><td>RA of the CG (deg)</td></tr>
                 <tr><td>DEC_CG</td><td>DEC of the CG (deg)</td></tr>
-                <tr><td>ZMAX</td><td>Maximum redshift for complete richness at the cluster location</td></tr>
+                <tr><td>IN_COSMO</td><td>Is cluster part of the cosmology sample</td></tr>
                 <tr style="border-bottom:1px solid black"><td colspan="100%"></td></tr>
-                <tr><td>SZE_SPT_ID</td><td>ID of SPT detection, when available (only for main detection)</td></tr>
-                <tr><td>SZE_SPT_SOURCE</td><td>Name of SPT catalog</td></tr>
-                <tr><td>SZE_SPT_ID_SECONDARY</td><td>ID of SPT detection, when available (secondary)</td></tr>
-                <tr><td>SZE_ACT_ID</td><td>ID of ACT detection, when available</td></tr>
-                <tr><td>SZE_ACT_ID_SECONDARY</td><td>ID of ACT detection, when available (secondary)</td></tr>
+                <tr><td>SZE_ACT_ID</td><td>ID of ACT detection used in section 4.1</td></tr>
+                <tr><td>SZE_ACT_CANDIDATES</td><td>ID of ACT detections in a (R<sub>500c</sub>, 3&sigma;<sub>z</sub>) cyllinder</td></tr>
+                <tr><td>SZE_SPT_ID</td><td>ID of SPT detection used in section 4.1</td></tr>
+                <tr><td>SZE_SPT_CANDIDATES</td><td>ID of SPT detections in a (R<sub>500c</sub>, 3&sigma;<sub>z</sub>) cyllinder</td></tr>
+                <tr><td>SZE_SPT_SOURCE</td><td>Reference of SPT source catalog for SZE_SPT_ID</td></tr>
+                <tr><td>SZE_SPT_SOURCE_CANDIDATES</td><td>Reference of SPT source catalogs for SZE_SPT_CANDIDATES</td></tr>
             </table>
 
             <table><tbody>
@@ -102,9 +103,9 @@
             <table>
                 <tr><th colspan=2>Footprint with local Zmax</th><td>
                 <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
-                <tr><td>pixel</td><td>NSIDE=4096 pixel with NEST ordering</td></tr>
-                <tr><td>detfrac</td><td>Fraction of the pixel covered</td></tr>
-                <tr><td>zmax</td><td>Maximum redshift for clusters with complete richness</td></tr>
+                <tr><td>PIXEL</td><td>Heaplix pixel with nested ordering (NSIDE=4096)</td></tr>
+                <tr><td>DETFRAC</td><td>Fraction of the pixel covered in survey</td></tr>
+                <tr><td>ZMAX</td><td>Maximum redshift for clusters with complete richness</td></tr>
             </table>
         </div>
 
