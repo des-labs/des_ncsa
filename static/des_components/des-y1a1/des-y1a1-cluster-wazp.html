@@ -1,0 +1,130 @@
+<dom-module id="des-y1a1-cluster-wazp">
+
+  <template>
+
+    <style include="shared-styles">
+      .fixup {
+        margin-top: -4.5rem;
+      }
+
+      .fixdown {
+        margin-top: 5rem;
+      }
+    </style>
+
+    <des-card heading="Y1 WaZP Cluster Catalog">
+
+
+        <h2 class="wp-block-heading">Overview</h2>
+        <p>
+            In <a href="https://doi.org/10.1093/mnras/stab264">Aguena et al (2021)</a>, we present a new (2+1)D galaxy
+            cluster finder based on photometric redshifts called Wavelet Z Photometric (WaZP) applied to DES first year
+            (Y1A1) data. The results are compared to clusters detected by the South Pole Telescope (SPT) survey and the
+            redMaPPer cluster finder, the latter based on the same photometric data. WaZP searches for clusters in
+            wavelet-based density maps of galaxies selected in photometric redshift space without any assumption on the
+            cluster galaxy populations. The comparison to other cluster samples was performed with a matching algorithm
+            based on angular proximity and redshift difference of the clusters. It led to the development of a new
+            approach to match two optical cluster samples, following an iterative approach to minimize incorrect
+            associations.  The WaZP cluster finder applied to DES Y1A1 galaxy survey (1,511 deg2 up to i=23 mag) led to
+            the detection of 60,547 galaxy clusters with redshifts 0.05<z<0.9 and richness Ngals>5. Considering the
+            overlapping regions and redshift ranges between the DES Y1A1 and SPT cluster surveys, all SZ based SPT
+            clusters are recovered by the WaZP this http URL comparison between WaZP and redMaPPer cluster samples
+            showed an excellent overall agreement for clusters with richness Ngals ({\lambda} for redMaPPer) greater
+            than 25 (20), with 95% recovery on both directions. Based on the cluster cross-match we explorethe relative
+            fragmentation of the two cluster samples and investigate the possible signatures of unmatched clusters.
+
+        </p>
+
+        <h2 class="wp-block-heading">Data</h2>
+
+        The products published in <b>The final WaZP galaxy cluster catalog of the Dark Energy Survey
+        and comparison with SZE data</b> can be found below:
+
+        <ul>
+            <li>Cluster catalog: <a href="https://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/y6_cluster_wazp/y1a1_dnf_wazp_v5.0.12.6801_clusters.fits">y1a1_dnf_wazp_v5.0.12.6801_clusters.fits</a></li>
+            <li>Cluster members: <a href="https://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/y6_cluster_wazp/y1a1_dnf_wazp_v5.0.12.6801_members.fits">y1a1_dnf_wazp_v5.0.12.6801_members.fits</a></li>
+            <li>Footprint map: <a href="https://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/y6_cluster_wazp/y1a1_dnf_wazp_v5.0.12.6801_footprint.fits">y1a1_dnf_wazp_v5.0.12.6801_footprint.fits</a></li>
+        </ul>
+
+        <h2 class="wp-block-heading">Catalogs description</h2>
+        <div class="fixup" id="catalog"></div>
+        <div class="fixdown">
+            <table>
+                <tr><th colspan=2>Cluster Catalog</th></tr>
+                <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
+                <tr><td>RA</td><td>in deg</td></tr>
+                <tr><td>DEC</td><td>in deg</td></tr>
+                <tr><td>zp_bright</td><td>final cluster redshift</td></tr>
+                <tr><td>SNR</td><td>Signal to Noise Ratio</td></tr>
+                <tr><td>NGALS</td><td>Richness, sum of Pmem’s down to m*+1.5 and within RADIUS_MPC</td></tr>
+                <tr><td>E_NGALS</td><td>error on NGALS</td></tr>
+                <tr><td>NGALS_R300</td><td>Richness, sum of Pmem’s down to m*+1.5 and within 0.3 Mpc</td></tr>
+                <tr><td>E_NGALS_R300</td><td>error on NGALS_R300</td></tr>
+                <tr><td>NGALS_R500</td><td>Richness, sum of Pmem’s down to m*+1.5 and within 0.5 Mpc</td></tr>
+                <tr><td>E_NGALS_R500</td><td>error on NGALS_R500</td></tr>
+                <tr><td>RADIUS_MPC</td><td>radius in Mpc</td></tr>
+                <tr><td>RADIUS_AMIN</td><td>same as RADIUS_MPC in arcmin at cluster redshift</td></tr>
+                <tr><td>MASKED_FRAC_1MPC</td><td>masked fraction with a 1.0 Mpc radius disk centered on cluster</td></tr>
+                <tr><td>MASKED_FRAC_05MPC</td><td>masked fraction with a 0.5 Mpc radius disk centered on cluster</td></tr>
+                <tr><td>MASKED_FRAC_03MPC</td><td>masked fraction with a 0.3 Mpc radius disk centered on cluster</td></tr>
+                <tr><td>LOCAL_NBKG</td><td>local bkg in gal. counts at the cluster redshift (per Mpc2)</td></tr>
+                <tr><td>GLOBAL_NBKG</td><td>global bkg in gal. counts at the cluster redshift (per Mpc2)</td></tr>
+                <tr><td>RA_BCG</td><td>RA of the BCG (deg)</td></tr>
+                <tr><td>DEC_BCG</td><td>DEC of the BCG (deg)</td></tr>
+                <tr><td>MSTAR_CL</td><td>mag_star at the cluster redshift zp</td></tr>
+                <tr><td>DMAG_BCG</td><td>m_BCG – m* within Radius_max of the cluster</td></tr>
+                <tr><td>DIST_BCG</td><td>distance of the BCG to the cluster center (Mpc)</td></tr>
+                <tr><td>NMEM</td><td>number of members (Pmem&gt;0)</td></tr>
+                <tr><td>ZMAX</td><td>Maximum redshift for complete richness at the cluster location</td></tr>
+                <tr><td>WCOVER_FRAC_1MPC</td><td>Weighted area fraction covered with a 1.0 Mpc radius disk centered on cluster</td></tr>
+            </table>
+
+            <table>
+                <tr><th colspan=2>Members Catalog</th></tr>
+                <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
+                <tr><td>ID_g</td><td>ID of the galaxy</td></tr>
+                <tr><td>NAME_CLUSTER</td><td>NAME of the corresponding cluster</td></tr>
+                <tr><td>RA</td><td>RA of the galaxy (deg)</td></tr>
+                <tr><td>DEC</td><td>DEC f the galaxy (deg)</td></tr>
+                <tr><td>ZP</td><td>photometric redshift of the galaxy</td></tr>
+                <tr><td>NMEM_CL</td><td>number of members in the cluster</td></tr>
+                <tr><td>PMEM</td><td>membership probability</td></tr>
+                <tr><td>MAG</td><td>reference magnitude band</td></tr>
+                <tr><td>RA_CL</td><td>RA of host cluster (deg)</td></tr>
+                <tr><td>DEC_CL</td><td>DEC of host cluster (deg)</td></tr>
+                <tr><td>ZP_CL</td><td>redshift of host cluster</td></tr>
+                <tr><td>MSTAR_CL</td><td>mstar in the ref band at the cluster redshift</td></tr>
+                <tr><td>mag_bcg</td><td>magnitude of the BCG</td></tr>
+                <tr><td>FLAG_BCG</td><td>=1 for the BCG</td></tr>
+                <tr><td>DCEN</td><td>distance in Mpc of the BCG</td></tr>
+                <tr><td>DCEN_NORM</td><td>DCEN/RADIUS_MPC</td></tr>
+                <tr><td>SNR</td><td>SNR of host cluster</td></tr>
+                <tr><td>NGALS</td><td>Richness of host cluster</td></tr>
+                <tr><td>mag_g</td><td>Magnitude in g band</td></tr>
+                <tr><td>mag_r</td><td>Magnitude in r band</td></tr>
+                <tr><td>mag_i</td><td>Magnitude in i band</td></tr>
+                <tr><td>mag_z</td><td>Magnitude in z band</td></tr>
+                <tr><td>mag_y</td><td>Magnitude in y band</td></tr>
+            </table>
+
+            <table>
+                <tr><th colspan=2>Footprint with local Zmax</th><td>
+                <tr style="font-weight:bold"><td>Column</td><td>Description</td></tr>
+                <tr><td>pixel</td><td>NSIDE=4096 pixel with RING ordering</td></tr>
+                <tr><td>zmax</td><td>Maximum redshift for clusters with complete richness</td></tr>
+            </table>
+        </div>
+
+
+    </des-card>
+  </template>
+
+  <script>
+    class DesY1A1ClWazp extends Polymer.Element {
+      static get is() { return 'des-y1a1-cluster-wazp'; }
+      _top() { this.$.y6_cl_wazp_top.scrollIntoView(); }
+    }
+    window.customElements.define(DesY1A1ClWazp.is, DesY1A1ClWazp);
+  </script>
+
+</dom-module>
