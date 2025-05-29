@@ -32,18 +32,16 @@
             showed an excellent overall agreement for clusters with richness Ngals ({\lambda} for redMaPPer) greater
             than 25 (20), with 95% recovery on both directions. Based on the cluster cross-match we explorethe relative
             fragmentation of the two cluster samples and investigate the possible signatures of unmatched clusters.
-
         </p>
 
         <h2 class="wp-block-heading">Data</h2>
 
-        The products published in <b>The final WaZP galaxy cluster catalog of the Dark Energy Survey
-        and comparison with SZE data</b> can be found below:
+        The products published in <b>The WaZP galaxy cluster sample of the dark energy survey year 1</b> can be found below:
 
         <ul>
-            <li>Cluster catalog: <a href="https://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/y6_cluster_wazp/y1a1_dnf_wazp_v5.0.12.6801_clusters.fits">y1a1_dnf_wazp_v5.0.12.6801_clusters.fits</a></li>
-            <li>Cluster members: <a href="https://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/y6_cluster_wazp/y1a1_dnf_wazp_v5.0.12.6801_members.fits">y1a1_dnf_wazp_v5.0.12.6801_members.fits</a></li>
-            <li>Footprint map: <a href="https://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/y6_cluster_wazp/y1a1_dnf_wazp_v5.0.12.6801_footprint.fits">y1a1_dnf_wazp_v5.0.12.6801_footprint.fits</a></li>
+            <li>Cluster catalog: <a href="https://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/y6_cluster_wazp/y1a1_dnf_wazp_v5.0.11.5239+47_clusters.fits">y1a1_dnf_wazp_v5.0.11.5239+47_clusters.fits</a></li>
+            <li>Cluster members: <a href="https://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/y6_cluster_wazp/y1a1_dnf_wazp_v5.0.11.5239+47_members.fits">y1a1_dnf_wazp_v5.0.11.5239+47_members.fits</a></li>
+            <li>Footprint map: <a href="https://desdr-server.ncsa.illinois.edu/despublic/y1a1_files/y6_cluster_wazp/y1a1_dnf_wazp_v5.0.11.5239+47_footprint_zmax_4096_ring.fits">y1a1_dnf_wazp_v5.0.11.5239+47_footprint_zmax_4096_ring.fits</a></li>
         </ul>
 
         <h2 class="wp-block-heading">Catalogs description</h2>
@@ -122,9 +120,8 @@
   <script>
     class DesY1A1ClWazp extends Polymer.Element {
       static get is() { return 'des-y1a1-cluster-wazp'; }
-      _top() { this.$.y6_cl_wazp_top.scrollIntoView(); }
+      _top() { this.$.y1_cl_wazp_top.scrollIntoView(); }
     }
     window.customElements.define(DesY1A1ClWazp.is, DesY1A1ClWazp);
   </script>
-
 </dom-module>
