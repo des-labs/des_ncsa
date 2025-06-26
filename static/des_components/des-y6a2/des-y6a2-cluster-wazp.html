@@ -12,8 +12,7 @@
       }
     </style>
 
-    <des-card heading="Y6 WaZP Cluster Catalog (in prep.)">
-<!--  remove when files are in place
+    <des-card heading="Y6 WaZP Cluster Catalog">
 
         <h2 class="wp-block-heading">Overview</h2>
         <p>
@@ -73,12 +72,9 @@
                 <tr><td>RA_CG</td><td>RA of the CG (deg)</td></tr>
                 <tr><td>DEC_CG</td><td>DEC of the CG (deg)</td></tr>
                 <tr><td>IN_COSMO</td><td>Is cluster part of the cosmology sample</td></tr>
-                <tr><td>SZE_ACT_ID</td><td>ID of ACT detection used in section 4.1</td></tr>
-                <tr><td>SZE_ACT_CANDIDATES</td><td>ID of ACT detections in a (R<sub>500c</sub>, 3&sigma;<sub>z</sub>) cyllinder</td></tr>
-                <tr><td>SZE_SPT_ID</td><td>ID of SPT detection used in section 4.1</td></tr>
-                <tr><td>SZE_SPT_CANDIDATES</td><td>ID of SPT detections in a (R<sub>500c</sub>, 3&sigma;<sub>z</sub>) cyllinder</td></tr>
+                <tr><td>SZE_ACT_ID</td><td>ID of ACT detection used in section 4.3</td></tr>
+                <tr><td>SZE_SPT_ID</td><td>ID of SPT detection used in section 4.3</td></tr>
                 <tr><td>SZE_SPT_SOURCE</td><td>Reference of SPT source catalog for SZE_SPT_ID</td></tr>
-                <tr><td>SZE_SPT_SOURCE_CANDIDATES</td><td>Reference of SPT source catalogs for SZE_SPT_CANDIDATES</td></tr>
             </table>
 
             <table><tbody>
@@ -90,10 +86,14 @@
                 <tr><td>DEC</td><td>DEC of the galaxy (deg)</td></tr>
                 <tr><td>ZPHOT</td><td>photometric redshift of the galaxy</td></tr>
                 <tr><td>ZSPEC</td><td>Galaxy spectroscopic redshift, when available</td></tr>
-                <tr><td>ZSPEC_SOURCE</td><td>Origin of spectroscopic redshift, 1-xx, 2-xx, 3-xx</td></tr>
+                <tr><td>ZSPEC_SOURCE</td><td>Origin of spectroscopic redshift</td></tr>
                 <tr><td>PMEM</td><td>membership probability</td></tr>
-                <tr><td>MAG</td><td>magnitude in the z band</td></tr>
-                <tr><td>FLAG</span>_CG</td><td>=1 for the central galaxy</td></tr>
+                <tr><td>MAG_G</td><td>magnitude in the g band</td></tr>
+                <tr><td>MAG_R</td><td>magnitude in the r band</td></tr>
+                <tr><td>MAG_I</td><td>magnitude in the i band</td></tr>
+                <tr><td>MAG_Z</td><td>magnitude in the z band</td></tr>
+                <tr><td>MAG_Y</td><td>magnitude in the y band</td></tr>
+                <tr><td>FLAG</span>_CG</td><td>Is central galaxy</td></tr>
                 </tbody>
             </table>
 
@@ -105,9 +105,6 @@
                 <tr><td>ZMAX</td><td>Maximum redshift for clusters with complete richness</td></tr>
             </table>
         </div>
--->
-<!--
--->
 
     </des-card>
   </template>
