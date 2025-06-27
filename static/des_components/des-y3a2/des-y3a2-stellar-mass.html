@@ -1,0 +1,39 @@
+<dom-module id="des-y3a2-stellar-mass">
+
+
+<template>
+
+      <style include="shared-styles">
+
+
+</style>
+
+
+<des-card heading="Stellar Mass Catalog">
+<div class="card-content">
+
+  <h2>
+    <strong>DES Year 3 Stellar Mass Maps</strong>
+  </h2>
+  <p>In Zacharegkas+ (2025) Stellar Mass Map catalog is presented.
+</p>
+  <h2>
+    <strong>Download</strong>
+  </h2>
+  <p>All the products can be found <a href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/stellar_mass/">here</a>. 
+  <p>
+  Please note large catalogs (100MB) may be better downloaded using the 'mc' interface to the object store rather than the web click download: <a href="https://desdr-server.ncsa.illinois.edu/">link</a>.
+  <p>
+
+</div>
+</des-card>
+</template>
+
+<script>
+    class DesY3A2StellarMass extends Polymer.Element {
+      static get is() { return 'des-y3a2-stellar-mass'; }
+    }
+    window.customElements.define(DesY3A2StellarMass.is, DesY3A2StellarMass);
+  </script>
+
+</dom-module>
