@@ -13,30 +13,890 @@
           <h2 id="overview-heading">
             <strong>Overview</strong>
           </h2>
-          <p>
-            In <a href="https://arxiv.org/abs/2605.27221" aria-label="One of many Key Projects papers">
-             </a>
-          </p>
-          <p>
-           Abstract:
-          </p>
-        </section>
+<p>
+<h1>[Y6KP Products]</h1>
+<h2>Overview</h2>
+<p>In <a target="_blank" href="https://arxiv.org/abs/2601.14559"><u>DES Collaboration (2026)</u></a> we present cosmology results combining galaxy clustering and weak gravitational lensing measured in the full six years (Y6) of observations by the Dark Energy Survey (DES) covering $\sim$5000\,deg$^2$. We perform a large-scale structure analysis with galaxy samples defined from the final data extending to redshift range $z \lesssim 2$, using three two-point correlation functions (3$\times$2pt): (i) cosmic shear measuring correlations among the shapes of 140 million source galaxies, (ii) auto-correlations of the spatial distribution of 9 million lens galaxies, and (iii) galaxy galaxy lensing from the cross-correlation between lens positions and source shapes.</p>
+<p>We perform the analysis under a rigorous blinding protocol to prevent confirmation biases. We model the data in flat \lcdm and $w$CDM cosmologies.  We find consistent cosmological results from subsets of the three two-point correlation functions. Their combined analysis yields $S_8\equiv \sigma_8 (\Omega_{\rm m}/0.3)^{0.5} = 0.789^{+0.012}_{-0.012}$ and matter density $\Omega_{\rm m} = 0.333^{+0.023}_{-0.028}$ in $\Lambda$CDM (68\% CL), where $\sigma_8$ is the clustering amplitude. The factor of two improvement in constraining power in the $\Omega_{\rm m}$--$\sigma_8$ plane relative to DES Year 3 is due to higher source number density, extended redshift range, and improved modeling. These constraints show a (full-space) parameter difference of 1.8$\sigma$ from a combination of cosmic microwave background (CMB) primary anisotropy datasets from {\it Planck} 2018, ACT-DR6, and SPT-3G DR1. Projected only into $S_8$ the difference is $2.6\sigma$. In $w$CDM the Y6 3$\times$2pt results yield $S_8 = 0.782^{+0.021}_{-0.020}$, $\Omega_{\rm m} = 0.325^{+0.032}_{-0.035}$, and dark energy equation-of-state parameter $w = -1.12^{+0.26}_{-0.20}$. For the first time, we combine all DES dark-energy probes: 3$\times$2pt, SNe Ia, BAO and Clusters. In \lcdm this combination yields a $2.8\sigma$ parameter difference from the CMB. When combining DES 3$\times$2pt with other most constraining low-redshift datasets (DESI DR2 BAO, DES SNe Ia, SPT clusters), we find a 2.3$\sigma$ parameter difference with CMB. A joint fit of Y6 3$\times$2pt, CMB, and those low-$z$ datasets produces the tightest $\Lambda$CDM constraints to date: $S_8 = 0.806^{+0.006}_{-0.007}$, $\Omega_{\rm m} = 0.302^{+0.003}_{-0.003}$, $h = 0.683^{+0.003}_{-0.002}$, and $\sum m_\nu < 0.14$ eV (95\% CL). In $w$CDM, this dataset combination yields $w = -0.981^{+0.021}_{-0.022}$, with no significant preference over $\Lambda$CDM.</p>
+<br>
+<p>The full listing of downloadable files for the DES Y6 3x2pt analysis can be found <a target="_blank" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/"><strong><u>here (chains and data vectors)</u></strong></a><strong>, </strong>and <a target="_blank" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/"><strong><u>here (data files)</u></strong></a>.</p>
+<br>
+<p><a href=https://www.darkenergysurvey.org/des-y6-cosmology-results-papers>link</a> to DES Y6 cosmology papers website.</p>
+<br><br>
+<h2>Data Vectors</h2>
+<p>These files (with fiducial MagLim lens sample and MetaDetection source sample) include all the 3x2pt data vectors, redshift distributions, and covariance matrix.</p>
+<p>They are included in a single FITS binary file, with 7 HDU extensions. Please note that metadata is stored as values in the header of each HDU, as described below, and may be necessary to understand the contents of the HDU.</p>
 
-        <!-- References Section -->
-        <section aria-labelledby="references-heading">
-          <h2 id="references-heading">
-            <strong>References</strong>
-          </h2>
-          <ol>
-            <li>
-              <a href="https://arxiv.org/abs/2605.27221" aria-label="Constraints on Dynamical Dark Energy paper">
-                DES Collaboration (2026)
-              </a>, ArXiv e-prints 2605.27221: KP paper (PRL submitted)
-            </li>
-          </ol>
-        </section>
 
-        <!-- Download Section -->
+<p>We provide an example notebook <a target="_blank" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/3x2pt_pipeline_public.ipynb"><strong><u>3x2pt_pipeline_public.ipynb</u></strong></a> that shows how to load the catalogs. Also, it can be used to reproduce the 3x2pt data vector and number densities and shape noise that are used as input for the covariance computation. It also shows an example of how to build the datavector in the two-point file format that cosmosis receives as input. </p>
+<p>[3x2pt DV file name and link]: <a target="_blank" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/3x2pt_2025-07-28-20h_UNBLINDED_wmask_nob2.fits"><strong><u>3x2pt_2025-07-28-20h_UNBLINDED_wmask_nob2.fits</u></strong></a></p>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 80%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> HDU 1 Name= COVMAT (Covariance matrix)</span> </th>
+  </tr>
+  <tr>
+       <td><strong>Image HDU </strong></td>
+       <td><strong>Description</strong></td>
+  </tr>
+  <tr> 
+       <td>Image array</td>
+       <td>1690x1690 array of cov. matrix</td>
+  </tr>
+  <tr>
+       <td><strong>Header Value </strong></td>
+       <td><strong>Description</strong></td>
+  </tr>
+  <tr> 
+       <td>Name_{i}(in header)</td>
+       <td>The order of the covariance blocks (0-3), corresponding to the names of other HDUs that hold the data vector.</td>
+  </tr>
+  <tr> 
+       <td>STRT{i}e_{i}(in header)</td>
+       <td>The start index of each covar. block (0-3). </td>
+  </tr>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 80%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> HDU 2 Name= xip (Cosmic shear xi+ corr. function)</span> </th>
+  </tr>
+  <tr>
+       <td><strong>Header Value </strong></td>
+       <td><strong>Description</strong></td>
+  </tr>
+  <tr> 
+       <td>KERNEL_1</td>
+       <td>The HDU name of the corresponding first (source) redshift distribution</td>
+  </tr>
+  <tr> 
+       <td>KERNEL_2</td>
+       <td>The HDU name of the corresponding second (source) redshift distribution</td>
+  </tr>
+  <tr> 
+       <td>N_ZBIN_1</td>
+       <td>The number of first (source) tomographic bins</td>
+  </tr>
+  <tr> 
+       <td>N_ZBIN_2</td>
+       <td>The number of second (source) tomographic bins</td>
+  </tr>
+  <tr> 
+       <td>N_ANG</td>
+       <td>The number of angular bins</td>
+  </tr>
+  <tr></tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td></tr>
+  <tr> 
+       <td>BIN1</td>
+       <td>Index of first (source) redshift bin</td>
+  </tr>
+  <tr> 
+       <td>BIN2</td>
+       <td>Index of second (source) redshift bin</td>
+  </tr>
+  <tr> 
+       <td>ANGBIN</td>
+       <td>Index of the angular bin </td>
+  </tr>
+  <tr> 
+       <td>ANGLEMIN</td>
+       <td>The lower angular bin edge.</td>
+  </tr>
+  <tr> 
+       <td>ANGLEMAX</td>
+       <td>The upper angular bin edge.</td>
+  </tr>
+  <tr> 
+       <td>VALUE</td>
+       <td>Measured value.</td>
+  </tr>
+  <tr> 
+       <td>ANG</td>
+       <td>Nominal center of the bin (logr in Treecorr)</td>
+  </tr>
+
+</tbody>
+</table>
+<hr>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 80%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> HDU 3 Name= xim (Cosmic shear xi- corr. function)</span> </th>
+  </tr>
+  <tr>
+       <td><strong>Header Value </strong></td>
+       <td><strong>Description</strong></td>
+  </tr>
+  <tr> 
+       <td>KERNEL_1</td>
+       <td>The HDU name of the corresponding first (source) redshift distribution</td>
+  </tr>
+  <tr> 
+       <td>KERNEL_2</td>
+       <td>The HDU name of the corresponding second (source) redshift distribution</td>
+  </tr>
+  <tr> 
+       <td>N_ZBIN_1</td>
+       <td>The number of first (source) tomographic bins</td>
+  </tr>
+  <tr> 
+       <td>N_ZBIN_2</td>
+       <td>The number of second (source) tomographic bins</td>
+  </tr>
+  <tr> 
+       <td>N_ANG</td>
+       <td>The number of angular bins</td>
+  </tr>
+  <tr></tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td></tr>
+  <tr> 
+       <td>BIN1</td>
+       <td>Index of first (source) redshift bin</td>
+  </tr>
+  <tr> 
+       <td>BIN2</td>
+       <td>Index of second (source) redshift bin</td>
+  </tr>
+  <tr> 
+       <td>ANGBIN</td>
+       <td>Index of the angular bin </td>
+  </tr>
+  <tr> 
+       <td>ANGLEMIN</td>
+       <td>The lower angular bin edge.</td>
+  </tr>
+  <tr> 
+       <td>ANGLEMAX</td>
+       <td>The upper angular bin edge.</td>
+  </tr>
+  <tr> 
+       <td>VALUE</td>
+       <td>Measured value.</td>
+  </tr>
+  <tr> 
+       <td>ANG</td>
+       <td>Nominal center of the bin (logr in Treecorr)</td>
+  </tr>
+
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 80%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> HDU 4 Name= gammat (Galaxy-galaxy lensing  corr. function)</span> </th>
+  </tr>
+  <tr>
+       <td><strong>Header Value </strong></td>
+       <td><strong>Description</strong></td>
+  </tr>
+  <tr> 
+       <td>KERNEL_1</td>
+       <td>The HDU name of the corresponding first (source) redshift distribution</td>
+  </tr>
+  <tr> 
+       <td>KERNEL_2</td>
+       <td>The HDU name of the corresponding second (source) redshift distribution</td>
+  </tr>
+  <tr> 
+       <td>N_ZBIN_1</td>
+       <td>The number of first (source) tomographic bins</td>
+  </tr>
+  <tr> 
+       <td>N_ZBIN_2</td>
+       <td>The number of second (source) tomographic bins</td>
+  </tr>
+  <tr> 
+       <td>N_ANG</td>
+       <td>The number of angular bins</td>
+  </tr>
+  <tr></tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td></tr>
+  <tr> 
+       <td>BIN1</td>
+       <td>Index of first (source) redshift bin</td>
+  </tr>
+  <tr> 
+       <td>BIN2</td>
+       <td>Index of second (source) redshift bin</td>
+  </tr>
+  <tr> 
+       <td>ANGBIN</td>
+       <td>Index of the angular bin </td>
+  </tr>
+  <tr> 
+       <td>ANGLEMIN</td>
+       <td>The lower angular bin edge.</td>
+  </tr>
+  <tr> 
+       <td>ANGLEMAX</td>
+       <td>The upper angular bin edge.</td>
+  </tr>
+  <tr> 
+       <td>VALUE</td>
+       <td>Measured value.</td>
+  </tr>
+  <tr> 
+       <td>ANG</td>
+       <td>Nominal center of the bin (logr in Treecorr)</td>
+  </tr>
+
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 80%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"><span>HDU 5 Name= wtheta (Angular clustering correlation funcction)</span></th>
+  </tr>
+  <tr>
+       <td><strong>Header Value </strong></td>
+       <td><strong>Description</strong></td>
+  </tr>
+  <tr> 
+       <td>KERNEL_1</td>
+       <td>The HDU name of the corresponding first (source) redshift distribution</td>
+  </tr>
+  <tr> 
+       <td>KERNEL_2</td>
+       <td>The HDU name of the corresponding second (source) redshift distribution</td>
+  </tr>
+  <tr> 
+       <td>N_ZBIN_1</td>
+       <td>The number of first (source) tomographic bins</td>
+  </tr>
+  <tr> 
+       <td>N_ZBIN_2</td>
+       <td>The number of second (source) tomographic bins</td>
+  </tr>
+  <tr> 
+       <td>N_ANG</td>
+       <td>The number of angular bins</td>
+  </tr>
+  <tr></tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td></tr>
+  <tr> 
+       <td>BIN1</td>
+       <td>Index of first (source) redshift bin</td>
+  </tr>
+  <tr> 
+       <td>BIN2</td>
+       <td>Index of second (source) redshift bin</td>
+  </tr>
+  <tr> 
+       <td>ANGBIN</td>
+       <td>Index of the angular bin </td>
+  </tr>
+  <tr> 
+       <td>ANGLEMIN</td>
+       <td>The lower angular bin edge.</td>
+  </tr>
+  <tr> 
+       <td>ANGLEMAX</td>
+       <td>The upper angular bin edge.</td>
+  </tr>
+  <tr> 
+       <td>VALUE</td>
+       <td>Measured value.</td>
+  </tr>
+  <tr> 
+       <td>ANG</td>
+       <td>Nominal center of the bin (logr in Treecorr)</td>
+  </tr>
+
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 80%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> HDU 6 Name= nz_lens (Tomographic redshift distribution of the lens galaxies)</span> </th>
+  </tr>
+  <tr>
+       <td><strong>Column Name</strong></td>
+       <td><strong>Description</strong></td>
+  </tr>
+  <tr> 
+       <td>Z_LOW</td>
+       <td>The lower z boundary of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>Z_MID</td>
+       <td>The central z of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>Z_HIGH</td>
+       <td>The upper z boundary of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>BIN{i}</td>
+       <td>The n(z) in this z bin range for tomographic bin (1-6) [1-5 for redMaGiC-based DV]</td>
+  </tr>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 80%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> HDU 7 Name= nz_source (Tomographic redshift distribution f the source galaxies)</span> </th>
+  </tr>
+  <tr>
+       <td><strong>Column Name</strong></td>
+       <td><strong>Description</strong></td>
+  </tr>
+  <tr> 
+       <td>Z_LOW</td>
+       <td>The lower z boundary of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>Z_MID</td>
+       <td>The central z of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>Z_HIGH</td>
+       <td>The upper z boundary of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>BIN{i}</td>
+       <td>The n(z) in this z bin range for tomographic bin(1-4)</td>
+  </tr>
+</tbody>
+</table>
+<hr>
+<h2>Redshift Realizations</h2>
+<p>The redshift realizations represent statistically plausible n(z) distributions obtained by propagating the uncertainties of the SOMPZ and clustering redshfit (WZ) calibration. This ensemble is then compressed into a small number of orthogonal modes that describe the dominant patterns of variation among the realizations. The amplitudes of these modes are varied as nuisance parameters in cosmological analyses, allowing the impact of photometric redshift uncertainties to be propagated efficiently.</p>
+<br>
+<p>The source nz realisations are currently stored here: </p>
+<p><a href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/desy6_source_redshift.h5>desy6_source_redshift.h5</a></p>
+<br>
+<p><strong>N(z) source realisations</strong></p>
+<p><strong>(80760 tomographic redshift distribution posterior samples of the source galaxies)</strong></p>
+<br>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 80%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> N(z) source realizations </span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td></tr>
+  <tr> 
+       <td>Z_LOW</td>
+       <td>The lower z boundary of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>Z_MID</td>
+       <td>The central z of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>Z_HIGH</td>
+       <td>The upper z boundary of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>NZ_BIN{i}</td>
+       <td>The n(z) in this z bin range for tomographic bin (1-4)</td>
+  </tr>
+  <tr> 
+       <td>M_BIN{i}</td>
+       <td>The multipliciative shear bias for tomo. bin (1-4)</td>
+  </tr>
+</tbody>
+</table>
+<p>The lens nz realisations are currently stored here:  </p>
+<p><a href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/desy6_lens_redshift.h5>desy6_lens_redshift.h5</a></p>
+<br>
+<p><strong>N(z) lens realisations</strong></p>
+<p><strong>(tomographic redshift distribution posterior samples of the lens galaxies)</strong></p>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 80%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> N(z) lens realisations </span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td></tr>
+  <tr> 
+       <td>Z_LOW</td>
+       <td>The lower z boundary of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>Z_MID</td>
+       <td>The central z of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>Z_HIGH</td>
+       <td>The upper z boundary of this z bin range</td>
+  </tr>
+  <tr> 
+       <td>NZ_BIN{i}</td>
+       <td>The n(z) in this z bin range for tomographic bin (1-6), shaped (n_reals,n_bins) </td>
+  </tr>
+</tbody>
+</table>
+<br>
+<h2>Cosmology Chains</h2>
+<p>Here we present the cosmological chains for the various models presented in the Y6 cosmic shear and 3x2pt papers. Information about the model and settings used in each chain are documented in the file headers. Released chains assume MAGLIM lens galaxy sample excluding lens bin 2, and we consider linear galaxy bias 3x2pt when combining with other probes e.g. all DES (3x2pt+BAO+SNe+CL).</p>
+<p><br>The chains are produced using the Nautilus sampler. When using the chains, you must weight the contribution of each sample according to the weight column. The final N samples to be used are listed at the end of the chain (nsample), along with the final log evidence. Note that this is a nested sampler, so the sequence of samples is not a random walk.</p>
+<br>
+<p>The chains provided here can be used with any cosmological parameter estimation code. When combining the DES posteriors with external data sets (CMB, SNe, BAO), the joint posterior is obtained by combining the individual distributions with the normalizing-flow density estimators implemented in tensiometer (see Section IV D of the DES Y6 3×2pt paper), rather than by re-running a full joint likelihood. Chains produced in this way contain equally weighted samples and are marked with an asterisk (*) in the table below. An example Python script showing how to load and visualize both the Nautilus chains and the normalizing-flow combinations is available at 
+ <a target="_blank" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/read_chains_y6.py"><u>read_chains_y6.py</u></a>
+and the older Y3 version at <a target="_blank" href="http://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/read_chains_y3a2.py"><u>read_chains_y3a2.py</u></a></p>
+<br>
+<table  class="wrapped">
+<colgroup> <col style="width: 50%;"/> <col style="width: 50%;"/> </colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> Cosmology Chains </span> </th>
+  </tr>
+  <tr> <td> <strong> Description</strong></td> <td> <strong> Filename </strong></td></tr>
+
+<tr><td>LCDM 3x2pt linear galaxy bias </td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/32pt_wolensbin2_lin_lcdm_DV0723_R0723.txt>32pt_wolensbin2_lin_lcdm_DV0723_R0723.txt</a></td></tr>
+<p>
+<tr><td>LCDM 3x2pt non-linear galaxy bias </td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/fiducial32pt_wolensbin2_nonlin_lcdm_DV0728_R0820.txt>fiducial32pt_wolensbin2_nonlin_lcdm_DV0728_R0820.txt</a></td></tr>
+
+<p>
+<tr><td>LCDM Cosmic Shear NLA</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/shear_nla_wolensbin2_lcdm_DV0723_R0723.txt>shear_nla_wolensbin2_lcdm_DV0723_R0723.txt</a></td></tr>
+
+<p>
+<tr><td>LCDM Cosmic Shear TATT-4</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/12pt_wolensbin2_lin_lcdm_DV0723_R0723.txt>12pt_wolensbin2_lin_lcdm_DV0723_R0723.txt</a></td></tr>
+
+<p>
+<tr><td>LCDM Gal.-Gal. Lensing + clustering linear galaxy bias</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/22pt_wolensbin2_lin_lcdm_DV0723_R0723.txt>22pt_wolensbin2_lin_lcdm_DV0723_R0723.txt</a></td></tr>
+
+<p>
+<tr><td>LCDM Gal.-Gal. Lensing + clustering non-linear galaxy bias</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/fiducial32pt_22pt_wolensbin2_nonlin_lcdm_DV0728_R0820.txt>fiducial32pt_22pt_wolensbin2_nonlin_lcdm_DV0728_R0820.txt</a></td></tr>
+
+<p>
+<tr><td>LCDM All DES (3x2pt+BAO+SNe+CL)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_sn___des_bao_des_y6_3x2pt___des_y3_clusters_no_gg_chain_csislike.txt>chain_des_sn___des_bao_des_y6_3x2pt___des_y3_clusters_no_gg_chain_csislike.txt</a></td></tr>
+
+<p>
+<tr><td>wCDM 3x2pt linear galaxy bias</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/fiducial32pt_wolensbin2_lin_wcdm_DV0723_R0723.txt>fiducial32pt_wolensbin2_lin_wcdm_DV0723_R0723.txt</a></td></tr>
+
+<p>
+<tr><td>wCDM 3x2pt non-linear galaxy bias</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/fiducial32pt_wolensbin2_nonlin_wcdm_DV0728_R0820.txt>fiducial32pt_wolensbin2_nonlin_wcdm_DV0728_R0820.txt</a></td></tr>
+
+<p>
+<tr><td>wCDM All DES (3x2pt+BAO+SNe)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_3x2pt_wcdm_des_sn___des_bao_wcdm_chain_csislike.txt>chain_des_3x2pt_wcdm_des_sn___des_bao_wcdm_chain_csislike.txt</a></td></tr>
+
+<p>
+<tr><td>LCDM DES 3x2pt linear galaxy bias (fixed-neutrino mass)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/fixmnu_32pt_wolensbin2_lin_lcdm_DV0728_R0909.txt>fixmnu_32pt_wolensbin2_lin_lcdm_DV0728_R0909.txt</a></td></tr>
+
+<p>
+<tr><td>* LCDM Low-Redshift Probes (DES Y5 SN + SPT Clusters + DESI DR2 BAO + DES BAO excl. DESI)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_bao_no_desi_des_sn_desi_dr2_bao_spt_clusters_chain_csislike.txt>chain_des_bao_no_desi_des_sn_desi_dr2_bao_spt_clusters_chain_csislike.txt</a></td></tr>
+
+<p>
+<tr><td>* LCDM DES 3x2pt + Low-Redshift Probes</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_3x2pt_des_bao_no_desi_des_sn_desi_dr2_bao_spt_clusters_chain_csislike.txt>chain_des_3x2pt_des_bao_no_desi_des_sn_desi_dr2_bao_spt_clusters_chain_csislike.txt</a></td></tr>
+
+<p>
+<tr><td>* LCDM DES 3x2pt + BAO + BBN</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_y6_3x2pt_des_y6_bao_bbn_prior_chain_csislike.txt>chain_des_y6_3x2pt_des_y6_bao_bbn_prior_chain_csislike.txt</a></td></tr>
+
+<p>
+
+<tr><td>LCDM SPA CMB</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/fiducial_cmb_tp_external_R1006.txt>fiducial_cmb_tp_external_R1006.txt</a></td></tr>
+
+<p>
+<tr><td>* LCDM DES 3x2pt + SPA CMB</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_3x2pt_cmb_t_p_chain_csislike.txt>chain_des_3x2pt_cmb_t_p_chain_csislike.txt</a></td></tr>
+
+<p>
+<tr><td>* LCDM All Probes (DES Y6 3x2pt + Planck + ACT + SPT Temp + Polariz. + DES Y6 BAO (excl. DESI) + DESI DR2 BAO + DES Y5 SN + SPT CL)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_cmb_t_p_des_3x2pt_des_bao_no_desi_des_sn_desi_dr2_bao_spt_clusters_chain_csislike.txt>chain_cmb_t_p_des_3x2pt_des_bao_no_desi_des_sn_desi_dr2_bao_spt_clusters_chain_csislike.txt</a></td></tr>
+
+<p>
+<tr><td>* wCDM Low-Redshift Probes (DES Y5 SN + SPT Clusters + DESI DR2 BAO + DES BAO excl. DESI)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_sn_wcdm_des_bao_no_desi_wcdm_desi_dr2_bao_wcdm_spt_clusters_wcdm_chain_csislike.txt>chain_des_sn_wcdm_des_bao_no_desi_wcdm_desi_dr2_bao_wcdm_spt_clusters_wcdm_chain_csislike.txt</a></td></tr>
+
+<p>
+<tr><td>* wCDM DES 3x2pt + Low-Redshift Probes </td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_3x2pt_wcdm_des_sn_wcdm_des_bao_no_desi_wcdm_desi_dr2_bao_wcdm_spt_clusters_wcdm_chain_csislike.txt>chain_des_3x2pt_wcdm_des_sn_wcdm_des_bao_no_desi_wcdm_desi_dr2_bao_wcdm_spt_clusters_wcdm_chain_csislike.txt</a></td></tr>
+
+<p>
+<tr><td>wCDM SPA CMB</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/fiducial_cmb_tp_wcdm_external_R1006.txt>fiducial_cmb_tp_wcdm_external_R1006.txt</a></td></tr>
+
+<p>
+<tr><td>* wCDM DES 3x2pt + SPA CMB</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_3x2pt_wcdm_cmb_t_p_wcdm_chain_csislike.txt>chain_des_3x2pt_wcdm_cmb_t_p_wcdm_chain_csislike.txt</a></td></tr>
+
+<p>
+<tr><td>* wCDM All Probes (DES Y6 3x2pt + Planck + ACT + SPT Temp + Polariz. + DES Y6 BAO (excl. DESI) + DESI DR2 BAO + DES Y5 SN + SPT CL)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/chain_des_3x2pt_wcdm_cmb_t_p_wcdm_des_sn_wcdm_des_bao_no_desi_wcdm_desi_dr2_bao_wcdm_spt_clusters_wcdm_chain_csislike.txt>chain_des_3x2pt_wcdm_cmb_t_p_wcdm_des_sn_wcdm_des_bao_no_desi_wcdm_desi_dr2_bao_wcdm_spt_clusters_wcdm_chain_csislike.txt</a></td></tr>
+
+<p>
+</tbody>
+</table>
+<br>
+<h1>[Y6KP Catalogs]</h1>
+<h2>Overview </h2>
+<p>The DES Year 6 cosmological analyses used a set of HDF5 files that contain the necessary catalog data to produce summary-statistic measurements. </p>
+<br>
+<p>All catalogs are provided as HDF5 files that share a common joint footprint mask (with an area of 4031.036 sq. deg.) and have four tomographic bins assigned. An index file links all individual files and stores metadata including provenance and creation date.</p>
+<br>
+<p>The catalog files can be found in this directory: <a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version>final_version</a>. They are:</p>
+<br>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> Y6KP Catalogs </span> </th>
+  </tr>
+  <tr> <td> <strong> Description</strong></td> <td> <strong> Filename </strong></td> <td> <strong> Size</strong></td></tr>
+
+<tr><td>Index file</td><td>
+<p><a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/desy6kp_cats_2024-11-07.hdf5>desy6kp_cats_2024-11-07.hdf5</a></td><td>
+<p>16K</td></tr>
+<tr><td>Joint Footprint Mask</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/jointmask_DESY6_2024-06-04.hsp>jointmask_DESY6_2024-06-04.hsp</a></td><td>
+696M</td></tr>
+<tr><td>Gold Catalog</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/gold_2024-11-07.hdf5>gold_2024-11-07.hdf5</a></td><td>
+180G</td><td>
+<tr><td>Magnitude-Limited Lens Sample</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/maglim_2024-11-07.hdf5>maglim_2024-11-07.hdf5</a></td><td>
+2.7G</td></tr>
+<tr><td>Shape Catalog</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/metadetect_2024-11-07.hdf5>metadetect_2024-11-07.hdf5</a></td><td>
+140G</td></tr>
+<tr><td>Shape Catalog (no tomography)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/metadetect_notomo2024-11-07.hdf5>metadetect_notomo2024-11-07.hdf5</a></td><td>
+129G</td></tr>
+<tr><td>Random Catalog (MagLim)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/randoms_maglim_2024-11-07.hdf5>randoms_maglim_2024-11-07.hdf5</a></td></td><td>6.9G</td></tr>
+<tr><td>Fandom Catalog (MagLim)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/fandoms_maglim_alternative_2024-11-07.hdf5>fandoms_maglim_alternative_2024-11-07.hdf5</td><td>6.9G</td></tr>
+<tr><td>Random Catalog (RedMaGiC)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/randoms_redmagic_2024-11-07.hdf5>randoms_redmagic_2024-11-07.hdf5</a></td><td>
+1.6G</td></tr>
+<tr><td>RedMaGiC Lens Sample</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/redmagic_2024-11-07.hdf5>redmagic_2024-11-07.hdf5</a></td><td>
+652M</td></tr>
+<tr><td>MagLim++ additional columns (from Legacy Surveys and alternative weights)</td><td>
+<a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/maglim_addl_cols_v1.hdf5>maglim_addl_cols_v1.hdf5</a></td><td>552M</td></tr>
+</tbody>
+</table>
+<br>
+<p>
+<h3>REDMAGIC ADDITIONAL</h3>
+<br>
+<h3>Index File</h3>
+This file contains only external links to the individual catalog files and a metadata group. It provides a single entry point to load all catalogs together.
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 70%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> Index file </span> </th>
+  </tr>
+  <tr> <td> <strong> Group</strong></td> <td> <strong> Filename </strong></td></tr>
+<tr><td>/desy6kp/mdet</td><td><a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/metadetect_2024-11-07.hdf5>metadetect_2024-11-07.hdf5</a></td></tr>
+<p>
+<tr><td>/desy6kp/gold</td><td><a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/gold_2024-11-07.hdf5>gold_2024-11-07.hdf5</a></td></tr>
+<p>
+<tr><td>/desy6kp/maglim</td><td><a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/maglim_2024-11-07.hdf5>maglim_2024-11-07.hdf5</a></td></tr>
+<p>
+<tr><td>/desy6kp/ran_maglim</td><td><a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/randoms_maglim_2024-11-07.hdf5>randoms_maglim_2024-11-07.hdf5</a></td></tr>
+<p>
+<tr><td>/desy6kp/redmagic</td><td><a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/redmagic_2024-11-07.hdf5>redmagic_2024-11-07.hdf5</a></td></tr>
+<p>
+<tr><td>/desy6kp/ran_redmagic</td><td><a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/randoms_redmagic_2024-11-07.hdf5>randoms_redmagic_2024-11-07.hdf5</a></td></tr>
+<p>
+<tr><td>/metadata</td><td>Attributes storing original file paths and creation date</td></tr>
+</tbody>
+</table>
+<p>
+<br>
+<h3>Joint Mask</h3>
+<p>A binary HEALSparse mask combining the Y6 weak lensing and large-scale structure footprints is already applied to all catalogs. This joint mask defines the survey area used in all KP analyses. The provided  <a target="_blank" href="http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/3x2pt_pipeline_public.ipynb"><strong><u>3x2pt_pipeline_public.ipynb</u></strong></a> has an example of how to load it and use it if needed.</p>
+
+<h3>Random Catalogs</h3>
+<p>Spatially uniform random point catalogs for the MagLim (at 50× the galaxy density) and RedMaGiC lens samples (at ~10× the galaxy density), split to match the tomographic binning of their respective lens catalogs. These are used in the estimation of two-point functions of clustering and galaxy-galaxy lensing.</p>
+<h3>Gold Catalog</h3>
+<p>This file contains all objects from the DES Y6 Gold v2.2 catalog that fall within the joint mask, stored as a single flat group in desy6kp/gold/gold/</p>
+<p>The full Gold catalog, without the mask applied, is available at<a target="_blank" href="https://des.ncsa.illinois.edu/releases/y6a2/Y6gold"> <u>https://des.ncsa.illinois.edu/releases/y6a2/Y6gold</u></a>. It contains the same columns as the masked file, where you can also find their descriptions.</p>
+<h3>Magnitude-Limited (MagLim++) Lens Sample</h3>
+<br>
+<p>A flux-limited galaxy sample selected for galaxy clustering and galaxy–galaxy lensing, split into 6 tomographic redshift bins. Survey property weights are included per tomographic bin. Note, additional columns including alternative systematics weights and columns from matching with the DESI Legacy Surveys (for star-galaxy separation) are included in the (row-matched) additional file <a target="_blank" href=http://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/maglim_addl_cols_v1.hdf5>maglim_addl_cols_v1.hdf5</a>. Analyses using the MagLim++ sample are <em>strongly</em> encouraged to test the sensitivity of their results to changing the systematic weights from the main WEIGHT to WEIGHT_ISD as a contribution to the systematic error budget. The difference between the galaxy clustering 2-point correlation functions computed from these is already analytically marginalized over through a term in the DES Y6KP covariance matrix. More detailed information for the other columns can be found at <a href=https://www.legacysurvey.org/dr9/catalogs>https://www.legacysurvey.org/dr9/catalogs</a></p>
+<br>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> Magnitude-limited (Maglim) lens sample desy6kp/maglim/tomo_bin_{i}</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>RA, DEC</td><td>Coordinates (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td><td>2</td></tr>
+<p>
+<tr><td>WEIGHT</td><td>Analysis weight</td><td>1</td></tr>
+</tbody>
+</table>
+<br>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> MagLim++ Additional Columns tomo_bin_{i}</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>RA, DEC</td><td>Coordinates (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td><td>2</td></tr>
+<tr><td>COADD_OBJECT_ID</td><td>DES object ID</td></tr>
+<p>
+<tr><td>BRICKID, OBJID</td><td>ID of the sky tile ("brick") the object falls in, and corresponding object id within that brick</td></tr>
+<p>
+<tr><td>TYPE</td><td>Tractor morphological model type (PSF, REX, DEV, EXP, SER).</td></tr>
+<p>
+<tr><td>RA_dr9, DEC_dr9</td><td>Coordinates from matched object in DESI Legacy Survey [degrees]</td><td>2</td></tr>
+<p>
+<tr><td>FLUX_W1</td><td>WISE W1-band flux (nanomaggies).</td></tr>
+<p>
+<tr><td>FLUX_IVAR_W1</td><td>inverse variance flux</td></tr>
+<p>
+<tr><td>MW_TRANSMISSION_W1</td><td>Galactic dust transmission fraction at W1</td></tr>
+<p>
+<tr><td>PSFDEPTH_W1</td><td>5 \sigma imaging depth of W1</td></tr>
+<p>
+<tr><td>W1_MAG_CORR</td><td>extinction-corrected W1-band AB magnitude</td></tr>
+<p>
+<tr><td>WEIGHT_ISD</td><td>Alternative weight from Iterative Systematics Decontamination (cubic, T_1D=2). See Weaverdyck & Rodriguez-Monroy et al. 2026.</td><td>1</td></tr>
+<p>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> [RedMaGiC] desy6kp/redmagic/tomo_bin_{{i}</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>chisq</td><td>Chi-square to best-fit</td><td>1</td></tr>
+<tr><td>ra, dec</td><td>Coordinates (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td><td>2</td></tr>
+<tr><td>id</td><td>Unique identifier for the coadd objects</td><td>1</td></tr>
+<tr><td>lum</td><td>Luminosity used for selection (units of L*)</td><td>1</td></tr>
+<tr><td>mag</td><td>BDF magnitude</td><td>1</td></tr>
+<tr><td>mag_err</td><td>Error in BDF magnitude</td><td>1</td></tr>
+<tr><td>refmag</td><td>Bandpass in MAG and LUM</td><td>1</td></tr>
+<tr><td>refmag_err</td><td>Bandpass in MAG_ERR</td><td>1</td></tr>
+<tr><td>zredmagic</td><td>redMaGiC photometric redshift estimate</td><td>1</td></tr>
+<tr><td>zredmagic_e</td><td>Gaussianized error for zredmagic</td><td>1</td></tr>
+<tr><td>zredmagic_s</td><td>Sample from (non-Gaussian) redMaGiC p(z)</td><td>1</td></tr>
+<tr><td>zspec</td><td>Spectroscopic redshift if available</td><td>1</td></tr>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> [RANDOMS for MagLim Sample] desy6kp/ran_maglim/tomo_bin_{{i}</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>RA,DEC</td><td>Coordinates (J2000.0)</td><td>2</td></tr>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> [RANDOMS for RedMaGiC Sample] desy6kp/ran_redmagic/tomo_bin_{{i}</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>RA,DEC</td><td>Coordinates (J2000.0)</td><td>2</td></tr>
+<tr><td>WEIGHT</td><td>Analysis weight</td><td>1</td></tr>
+<tr><td>Z</td><td>Redshift</td><td>1</td></tr>
+</tbody>
+</table>
+<hr>
+<h3>Shape Catalog (no tomography)</h3>
+<p>desy6kp/mdet/noshear/tomo_bin_{i}/</p>
+<p>desy6kp/mdet/1p/tomo_bin_{i}/</p>
+<p>desy6kp/mdet/1m/tomo_bin_{i}/</p>
+<p>desy6kp/mdet/2p/tomo_bin_{i}/</p>
+<p>desy6kp/mdet/2m/tomo_bin_{i}/</p>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> Shape Catalog (no tomography)</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>cell_wide</td><td>photo-z?</td><td>1</td></tr>
+<tr><td>dec</td><td>Declination (deg)</td><td>1</td></tr>
+<tr><td>gauss_T_err</td><td>Error in size squared (arcsec^2), T, from Gaussian fit</td><td>1</td></tr>
+<tr><td>gauss_T_ratio</td><td>gauss_T/psfrec_T from gauss measurement</td><td>1</td></tr>
+<tr><td>gauss_g_{1,2}</td><td>Ellipticity components from gauss measurement</td><td>2</td></tr>
+<tr><td>gauss_g_cov_{1_1,1_2,2_2}</td><td>Shape covariance components 1-1, 1-2, 2-2</td><td>3</td></tr>
+<tr><td>gauss_psf_T</td><td>PSF size squared (arcsec^2) fro gauss measurement</td><td>1</td></tr>
+<tr><td>gauss_s2n</td><td>Signal-to-noise </td><td>1</td></tr>
+<tr><td>mdet_flags</td><td>Metadetection flags</td><td>1</td></tr>
+<tr><td>mfrac</td><td>Masked fraction of pixels during coadd process</td><td>1</td></tr>
+<tr><td>mfrac_img</td><td>??</td><td>1</td></tr>
+<tr><td>nepoch_{g,r,i,z}</td><td>Number of epochs contributing in bandpass</td><td>4</td></tr>
+<tr><td>patch_num</td><td>Patch number (e.g., for jackknife regions)</td><td>1</td></tr>
+<tr><td>pgauss_T</td><td>Size squared of the object (arcsec^2), from pre-PSF moments in Fourier spacet</td><td>1</td></tr>
+<tr><td>pgauss_T_err</td><td>Error in pgauss size squared (arcsec^2), T</td><td>1</td></tr>
+<tr><td>pgauss_band_flux_err_{g,r,i,z}</td><td>Error in pgauss flux in bandpass</td><td>4</td></tr>
+<tr><td>pgauss_band_flux_{g,r,i,z}</td><td>Flux in bandpass</td><td>4</td></tr>
+<tr><td>pgauss_band_flux_{g,r,i,z}_nodered</td><td>Flux in bandpass, no dereddening applied</td><td>4</td></tr>
+<tr><td>pgauss_psf_T</td><td>PSF size squared (arcsec^2) from pgauss measurement</td><td>1</td></tr>
+<tr><td>psfrec_T</td><td>Size squared (arcsec^2) of reconstructed PSF model for metacalibration step</td><td>1</td></tr>
+<tr><td>psfrec_g_{1,2}</td><td>Ellipticity components of reconstructed PSF model</td><td>2</td></tr>
+<tr><td>ra</td><td>Right ascension (deg)</td><td>1</td></tr>
+<tr><td>slice_id</td><td>ID of the coadd slice/cell within the tile</td><td>1</td></tr>
+<tr><td>tilename</td><td>Name of the DES coadd tile containing the object</td><td>1</td></tr>
+<tr><td>uid</td><td>Unique object identifier</td><td>1</td></tr>
+<tr><td>w</td><td>Shear weight</td><td>1</td></tr>
+<tr><td>x</td><td>x position in the coadd tile (pixels)</td><td>1</td></tr>
+<tr><td>y</td><td>y position in the coadd tile (pixels)</td><td>1</td></tr>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> /catalog/metadata/unsheared Group</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>R11</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>R12</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>R21</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>R22</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>T</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>T_ERR</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>COADD_OBJECT_ID</td><td>Unique identifier for the coadded objects</td><td>1</td></tr>
+<p> 
+<tr><td>COVMAT_0_1</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>COVMAT_1_1</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>COVMAT_2_2</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>RA, DEC</td><td>Coordinates (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td> <td>2</td></tr>
+<p> 
+<tr><td>E_{1,2}</td><td></td><td>2</td></tr>
+<p> 
+<tr><td>FLAGS</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>FLUX_ERR_{R,I,Z}</td><td></td><td>3</td></tr>
+<p> 
+<tr><td>FLUX_{R,I,Z}</td><td></td><td>3</td></tr>
+<p> 
+<tr><td>SIZE_RATIO</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>SNR</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>WEIGHT</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>MASK_FRAC</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>MCAL_PSF_T</td><td></td><td>2</td></tr>
+<p> 
+<tr><td>MCAL_PSF_E{1,2}</td><td></td><td>2</td></tr>
+<p> 
+<tr><td>NIMAGE_TOT_{R,I,Z}</td><td></td><td>3</td></tr>
+<p> 
+<tr><td>NIMAGE_USE_{R,I,Z}</td><td></td><td>3</td></tr>
+<p> 
+<tr><td>PSF_T</td><td></td><td>1</td></tr>
+<p> 
+<tr><td>PSF_E{1,2}</td><td></td><td>2</td></tr>
+<p> 
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> [Data for Sheared 1m]/catalog/sompz/sheared_1m Group</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>BHAT</td><td></td><td>1</td></tr>
+<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> [Data for Sheared 1p]/catalog/sompz/sheared_1p Group</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>BHAT</td><td></td><td>1</td></tr>
+<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> [Data for Sheared 2m]/catalog/sompz/sheared_2m Group</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>BHAT</td><td></td><td>1</td></tr>
+<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> [Data for Sheared 2p]/catalog/sompz/sheared_2p Group</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>BHAT</td><td></td><td>1</td></tr>
+<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
+</tbody>
+</table>
+<hr>
+<table  class="wrapped">
+<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
+<tbody>
+  <tr> 
+       <th style="text-align: center;"> <span> [Data for Unsheared]/catalog/sompz/unsheared Group</span> </th>
+  </tr>
+  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
+<tr><td>BHAT</td><td></td><td>1</td></tr>
+<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
+<tr><td>COADD_OBJECT_ID</td><td>Unique identifier for the coadded objects</td><td>1</td></tr>
+</tbody>
+</table>
+
+   <!-- Download Section -->
         <section aria-labelledby="download-heading">
           <h2 id="download-heading">
             <strong>Download</strong>
