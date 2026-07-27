@@ -1,0 +1,51 @@
+<dom-module id="des-y6a2-kpnew">
+  <template>
+    <style include="shared-styles"></style>
+
+    <div class="fixup" id="y6_kpnew_top"></div>
+    <div class="fixdown"></div>
+
+    <des-card heading="Y6 Key Project Products">
+      <div class="card-content">
+
+        <!-- Overview Section -->
+        <section aria-labelledby="overview-heading">
+          <h2 id="overview-heading">
+            <strong>Overview</strong>
+          </h2>
+          <p>
+            In <a href="https://arxiv.org/abs/2605.27221" aria-label="One of many Key Projects papers">
+             </a>
+          </p>
+          <p>
+           Abstract:
+          </p>
+        </section>
+
+        <!-- References Section -->
+        <section aria-labelledby="references-heading">
+          <h2 id="references-heading">
+            <strong>References</strong>
+          </h2>
+          <ol>
+            <li>
+              <a href="https://arxiv.org/abs/2605.27221" aria-label="Constraints on Dynamical Dark Energy paper">
+                DES Collaboration (2026)
+              </a>, ArXiv e-prints 2605.27221: KP paper (PRD submitted)
+            </li>
+          </ol>
+        </section>
+
+      </div>
+    </des-card>
+  </template>
+
+  <script>
+    class DesY6A2KP extends Polymer.Element {
+      static get is() { return 'des-y6a2-kpnew'; }
+      _top() { this.$.y6_kpnew_top.scrollIntoView(); }
+    }
+    window.customElements.define(DesY6A2KP.is, DesY6A2KP);
+  </script>
+</dom-module>
+
