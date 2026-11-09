@@ -379,7 +379,7 @@
 <p>The redshift realizations represent statistically plausible n(z) distributions obtained by propagating the uncertainties of the SOMPZ and clustering redshfit (WZ) calibration. This ensemble is then compressed into a small number of orthogonal modes that describe the dominant patterns of variation among the realizations. The amplitudes of these modes are varied as nuisance parameters in cosmological analyses, allowing the impact of photometric redshift uncertainties to be propagated efficiently.</p>
 <br>
 <p>The source nz realisations are currently stored here: </p>
-<p><a href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/desy6_source_redshift.h5>desy6_source_redshift.h5</a></p>
+<p><a href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_psf/final_version/desy6_source_redshift.h5>desy6_source_redshift.h5</a></p>
 <br>
 <p><strong>N(z) source realisations</strong></p>
 <p><strong>(80760 tomographic redshift distribution posterior samples of the source galaxies)</strong></p>
@@ -414,7 +414,7 @@
 </tbody>
 </table>
 <p>The lens nz realisations are currently stored here:  </p>
-<p><a href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version/desy6_lens_redshift.h5>desy6_lens_redshift.h5</a></p>
+<p><a href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_psf/final_version/desy6_lens_redshift.h5>desy6_lens_redshift.h5</a></p>
 <br>
 <p><strong>N(z) lens realisations</strong></p>
 <p><strong>(tomographic redshift distribution posterior samples of the lens galaxies)</strong></p>
@@ -449,7 +449,7 @@
 <p><br>The chains are produced using the Nautilus sampler. When using the chains, you must weight the contribution of each sample according to the weight column. The final N samples to be used are listed at the end of the chain (nsample), along with the final log evidence. Note that this is a nested sampler, so the sequence of samples is not a random walk.</p>
 <br>
 <p>The chains provided here can be used with any cosmological parameter estimation code. When combining the DES posteriors with external data sets (CMB, SNe, BAO), the joint posterior is obtained by combining the individual distributions with the normalizing-flow density estimators implemented in tensiometer (see Section IV D of the DES Y6 3×2pt paper), rather than by re-running a full joint likelihood. Chains produced in this way contain equally weighted samples and are marked with an asterisk (*) in the table below. An example Python script showing how to load and visualize both the Nautilus chains and the normalizing-flow combinations is available at 
- <a target="_blank" href="https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/chains_release/read_chains_y6.py"><u>read_chains_y6.py</u></a>
+ <a target="_blank" href="https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_key/chains_release/read_chains_y6.py"><u>read_chains_y6.py</u></a>
 and the older Y3 version at <a target="_blank" href="https://desdr-server.ncsa.illinois.edu/despublic/y3a2_files/chains/read_chains_y3a2.py"><u>read_chains_y3a2.py</u></a></p>
 <br>
 <table  class="wrapped">
@@ -557,7 +557,7 @@ and the older Y3 version at <a target="_blank" href="https://desdr-server.ncsa.i
 <br>
 <p>All catalogs are provided as HDF5 files that share a common joint footprint mask (with an area of 4031.036 sq. deg.) and have four tomographic bins assigned. An index file links all individual files and stores metadata including provenance and creation date.</p>
 <br>
-<!-- <p>The catalog files can be found in this directory: <a target="_blank" href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6key_products/final_version>final_version</a>. They are:</p> -->
+<!-- <p>The catalog files can be found in this directory: <a target="_blank" href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_psf/final_version>final_version</a>. They are:</p> -->
 <br>
 <table  class="wrapped">
 <colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
@@ -904,7 +904,7 @@ This file contains only external links to the individual catalog files and a met
             <strong>Download</strong>
           </h2>
           <p>
-            All the DES Key project products can be found <a href="https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/">here</a>. <p> 
+            All the DES Key project products can be found <a href="https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_psf">here</a> and <a href="https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_key">here</a>. <p> 
               
             Please note large catalogs (100MB) may be better downloaded using the 'mc' interface to the object store rather than the web click download: <a href="https://desdr-server.ncsa.illinois.edu/">link</a>.
             
