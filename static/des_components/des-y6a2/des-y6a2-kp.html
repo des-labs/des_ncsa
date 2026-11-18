@@ -573,7 +573,7 @@ and the older Y3 version at <a target="_blank" href="https://desdr-server.ncsa.i
 <tr><td>PIFF PSFs</td><td><p><a target="_blank" href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_psf/piff_y6a2_v3_public_final.h5>piff_y6a2_v3_public_final.h5></a></td><td>54G</td></tr>
 <tr><td>PIFF Schema</td><td><p><a target="_blank" href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_psf/psf_y6_release_schema.md>psf_y6_release_schema.md</a></td><td>5K</td></tr>
 <tr><td>Joint Footprint Mask</td><td>
-<a target="_blank" href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6k_psf/final_version/jointmask_DESY6_2024-06-04.hsp>jointmask_DESY6_2024-06-04.hsp</a></td><td>
+<a target="_blank" href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_psf/final_version/jointmask_DESY6_2024-06-04.hsp>jointmask_DESY6_2024-06-04.hsp</a></td><td>
 696M</td></tr>
 <tr><td>Gold Catalog</td><td>
 <a target="_blank" href=https://desdr-server.ncsa.illinois.edu/despublic/y6a2_files/y6_psf/final_version/gold_2024-11-07.hdf5>gold_2024-11-07.hdf5</a></td><td>
@@ -733,7 +733,7 @@ This file contains only external links to the individual catalog files and a met
 </tbody>
 </table>
 <hr>
-<h3>Shape Catalog (no tomography)</h3>
+<h3>Shape Catalog</h3>
 <p>desy6kp/mdet/noshear/tomo_bin_{i}/</p>
 <p>desy6kp/mdet/1p/tomo_bin_{i}/</p>
 <p>desy6kp/mdet/1m/tomo_bin_{i}/</p>
@@ -743,30 +743,30 @@ This file contains only external links to the individual catalog files and a met
 <colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
 <tbody>
   <tr> 
-       <th style="text-align: center;"> <span> Shape Catalog (no tomography)</span> </th>
+       <th style="text-align: center;"> <span> Shape Catalog</span> </th>
   </tr>
   <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
-<tr><td>cell_wide</td><td>photo-z?</td><td>1</td></tr>
+<tr><td>cell_wide</td><td>Object’s cell occupation ID in wide SOM</td><td>1</td></tr>
 <tr><td>dec</td><td>Declination (deg)</td><td>1</td></tr>
-<tr><td>gauss_T_err</td><td>Error in size squared (arcsec^2), T, from Gaussian fit</td><td>1</td></tr>
+<tr><td>gauss_T_err</td><td>Error in size squared (arcsec^2), T, from gauss measurement</td><td>1</td></tr>
 <tr><td>gauss_T_ratio</td><td>gauss_T/psfrec_T from gauss measurement</td><td>1</td></tr>
 <tr><td>gauss_g_{1,2}</td><td>Ellipticity components from gauss measurement</td><td>2</td></tr>
 <tr><td>gauss_g_cov_{1_1,1_2,2_2}</td><td>Shape covariance components 1-1, 1-2, 2-2</td><td>3</td></tr>
-<tr><td>gauss_psf_T</td><td>PSF size squared (arcsec^2) fro gauss measurement</td><td>1</td></tr>
-<tr><td>gauss_s2n</td><td>Signal-to-noise </td><td>1</td></tr>
+<tr><td>gauss_psf_T</td><td>PSF size squared (arcsec^2) from gauss measurement</td><td>1</td></tr>
+<tr><td>gauss_s2n</td><td>Signal-to-noise from gauss measurement</td><td>1</td></tr>
 <tr><td>mdet_flags</td><td>Metadetection flags</td><td>1</td></tr>
-<tr><td>mfrac</td><td>Masked fraction of pixels during coadd process</td><td>1</td></tr>
-<tr><td>mfrac_img</td><td>??</td><td>1</td></tr>
-<tr><td>nepoch_{g,r,i,z}</td><td>Number of epochs contributing in bandpass</td><td>4</td></tr>
-<tr><td>patch_num</td><td>Patch number (e.g., for jackknife regions)</td><td>1</td></tr>
-<tr><td>pgauss_T</td><td>Size squared of the object (arcsec^2), from pre-PSF moments in Fourier spacet</td><td>1</td></tr>
+<tr><td>mfrac</td><td>Fraction of masked or interpolated pixels for the object</td><td>1</td></tr>
+<tr><td>mfrac_img</td><td>Fraction of masked or interpolated pixels of the cell coadd that the object was detected/measured</td><td>1</td></tr>
+<tr><td>nepoch_{g,r,i,z}</td><td>Number of epochs contributing to coadd in each bandpass</td><td>4</td></tr>
+<tr><td>patch_num</td><td>Patch number r for jackknife regions</td><td>1</td></tr>
+<tr><td>pgauss_T</td><td>Size squared of the object (arcsec^2), from pgauss measurement</td><td>1</td></tr>
 <tr><td>pgauss_T_err</td><td>Error in pgauss size squared (arcsec^2), T</td><td>1</td></tr>
 <tr><td>pgauss_band_flux_err_{g,r,i,z}</td><td>Error in pgauss flux in bandpass</td><td>4</td></tr>
-<tr><td>pgauss_band_flux_{g,r,i,z}</td><td>Flux in bandpass</td><td>4</td></tr>
-<tr><td>pgauss_band_flux_{g,r,i,z}_nodered</td><td>Flux in bandpass, no dereddening applied</td><td>4</td></tr>
+<tr><td>pgauss_band_flux_{g,r,i,z}</td><td>Flux in bandpass from pgauss measurement</td><td>4</td></tr>
+<tr><td>pgauss_band_flux_{g,r,i,z}_nodered</td><td>Flux in bandpass pgauss measurement, no dereddening applied</td><td>4</td></tr>
 <tr><td>pgauss_psf_T</td><td>PSF size squared (arcsec^2) from pgauss measurement</td><td>1</td></tr>
-<tr><td>psfrec_T</td><td>Size squared (arcsec^2) of reconstructed PSF model for metacalibration step</td><td>1</td></tr>
-<tr><td>psfrec_g_{1,2}</td><td>Ellipticity components of reconstructed PSF model</td><td>2</td></tr>
+<tr><td>psfrec_T</td><td>Size squared (arcsec^2) of original Piff PSF model for metacalibration step</td><td>1</td></tr>
+<tr><td>psfrec_g_{1,2}</td><td>Ellipticity components of original Piff PSF model reconstruction</td><td>2</td></tr>
 <tr><td>ra</td><td>Right ascension (deg)</td><td>1</td></tr>
 <tr><td>slice_id</td><td>ID of the coadd slice/cell within the tile</td><td>1</td></tr>
 <tr><td>tilename</td><td>Name of the DES coadd tile containing the object</td><td>1</td></tr>
@@ -777,126 +777,6 @@ This file contains only external links to the individual catalog files and a met
 </tbody>
 </table>
 <hr>
-<table  class="wrapped">
-<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
-<tbody>
-  <tr> 
-       <th style="text-align: center;"> <span> /catalog/metadata/unsheared Group</span> </th>
-  </tr>
-  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
-<tr><td>R11</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>R12</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>R21</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>R22</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>T</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>T_ERR</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>COADD_OBJECT_ID</td><td>Unique identifier for the coadded objects</td><td>1</td></tr>
-<p> 
-<tr><td>COVMAT_0_1</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>COVMAT_1_1</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>COVMAT_2_2</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>RA, DEC</td><td>Coordinates (J2000.0) with quantized precision for indexing (DELTAWIN_J2000 has full precision but not indexed) [degrees]</td> <td>2</td></tr>
-<p> 
-<tr><td>E_{1,2}</td><td></td><td>2</td></tr>
-<p> 
-<tr><td>FLAGS</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>FLUX_ERR_{R,I,Z}</td><td></td><td>3</td></tr>
-<p> 
-<tr><td>FLUX_{R,I,Z}</td><td></td><td>3</td></tr>
-<p> 
-<tr><td>SIZE_RATIO</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>SNR</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>WEIGHT</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>MASK_FRAC</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>MCAL_PSF_T</td><td></td><td>2</td></tr>
-<p> 
-<tr><td>MCAL_PSF_E{1,2}</td><td></td><td>2</td></tr>
-<p> 
-<tr><td>NIMAGE_TOT_{R,I,Z}</td><td></td><td>3</td></tr>
-<p> 
-<tr><td>NIMAGE_USE_{R,I,Z}</td><td></td><td>3</td></tr>
-<p> 
-<tr><td>PSF_T</td><td></td><td>1</td></tr>
-<p> 
-<tr><td>PSF_E{1,2}</td><td></td><td>2</td></tr>
-<p> 
-</tbody>
-</table>
-<hr>
-<table  class="wrapped">
-<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
-<tbody>
-  <tr> 
-       <th style="text-align: center;"> <span> [Data for Sheared 1m]/catalog/sompz/sheared_1m Group</span> </th>
-  </tr>
-  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
-<tr><td>BHAT</td><td></td><td>1</td></tr>
-<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
-</tbody>
-</table>
-<hr>
-<table  class="wrapped">
-<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
-<tbody>
-  <tr> 
-       <th style="text-align: center;"> <span> [Data for Sheared 1p]/catalog/sompz/sheared_1p Group</span> </th>
-  </tr>
-  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
-<tr><td>BHAT</td><td></td><td>1</td></tr>
-<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
-</tbody>
-</table>
-<hr>
-<table  class="wrapped">
-<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
-<tbody>
-  <tr> 
-       <th style="text-align: center;"> <span> [Data for Sheared 2m]/catalog/sompz/sheared_2m Group</span> </th>
-  </tr>
-  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
-<tr><td>BHAT</td><td></td><td>1</td></tr>
-<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
-</tbody>
-</table>
-<hr>
-<table  class="wrapped">
-<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
-<tbody>
-  <tr> 
-       <th style="text-align: center;"> <span> [Data for Sheared 2p]/catalog/sompz/sheared_2p Group</span> </th>
-  </tr>
-  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
-<tr><td>BHAT</td><td></td><td>1</td></tr>
-<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
-</tbody>
-</table>
-<hr>
-<table  class="wrapped">
-<colgroup> <col style="width: 30%;"/> <col style="width: 30%;"/> <col style="width: 20%;"/></colgroup>
-<tbody>
-  <tr> 
-       <th style="text-align: center;"> <span> [Data for Unsheared]/catalog/sompz/unsheared Group</span> </th>
-  </tr>
-  <tr> <td> <strong> Column Name</strong></td> <td> <strong> Description </strong></td> <td> <strong> Num cols</strong></td></tr>
-<tr><td>BHAT</td><td></td><td>1</td></tr>
-<tr><td>CELL_WIDE</td><td></td><td>1</td></tr>
-<tr><td>COADD_OBJECT_ID</td><td>Unique identifier for the coadded objects</td><td>1</td></tr>
-</tbody>
-</table>
 
    <!-- Download Section -->
         <section aria-labelledby="download-heading">
